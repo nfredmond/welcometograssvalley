@@ -12,7 +12,6 @@ Modern, mobile-first Next.js + Supabase stack for the “Welcome to Grass Valley
 ## Quickstart
 
 ```bash
-cd web
 cp env.example .env.local
 npm install
 npm run dev
@@ -38,7 +37,6 @@ Never expose the service role key in the browser—only set it in serverless/Ver
 2. Run the migration:
 
    ```bash
-   cd web
    npx supabase login
    npx supabase link --project-ref <project_ref>
    npx supabase migration up
@@ -60,7 +58,6 @@ Never expose the service role key in the browser—only set it in serverless/Ver
 2. Deploy & test:
 
    ```bash
-   cd web
    npx supabase functions serve --env-file .env.local
    # in another terminal
    curl http://localhost:54321/functions/v1/sync_episodes_from_rss
@@ -84,7 +81,7 @@ Never expose the service role key in the browser—only set it in serverless/Ver
 ## Deployment (Vercel)
 
 1. Push this repository to GitHub.
-2. Create a new Vercel project, choose the `web` directory as the root.
+2. Create a new Vercel project using the repository root (Next.js app now lives there).
 3. Set the env vars listed above in the Vercel dashboard.
 4. Add Supabase URL/keys and Buzzsprout RSS in the Supabase Edge Function settings as well.
 5. After deploy, trigger the RSS sync once (`supabase functions invoke sync_episodes_from_rss --project-ref <ref>`).

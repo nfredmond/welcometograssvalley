@@ -119,8 +119,13 @@ before update on public.site_settings
 for each row execute procedure public.handle_updated_at();
 
 -- Storage buckets -----------------------------------------------------------
-select storage.create_bucket('guest-photos', 'public');
-select storage.create_bucket('episode-artwork', 'public');
+insert into storage.buckets (id, name, public)
+values ('guest-photos', 'guest-photos', true)
+on conflict (id) do nothing;
+
+insert into storage.buckets (id, name, public)
+values ('episode-artwork', 'episode-artwork', true)
+on conflict (id) do nothing;
 
 -- Row Level Security --------------------------------------------------------
 alter table public.episodes enable row level security;
