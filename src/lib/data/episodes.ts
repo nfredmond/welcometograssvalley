@@ -43,11 +43,13 @@ export async function getPaginatedEpisodes(page = 1): Promise<PaginatedEpisodes>
 
   if (error) {
     console.error("Failed to fetch episodes", error.message);
-    return { data: [], total: 0, page, pageSize: PAGE_SIZE };
+    return { data: [] as Episode[], total: 0, page, pageSize: PAGE_SIZE };
   }
 
+  const episodes = (data as Episode[] | null) ?? [];
+
   return {
-    data: data ?? [],
+    data: episodes,
     total: count ?? 0,
     page,
     pageSize: PAGE_SIZE,
@@ -69,16 +71,26 @@ export async function getEpisodeBySlug(slug: string): Promise<EpisodeWithGuests 
     return null;
   }
 
+  const episode = data as Episode;
+
+  type GuestLink = {
+    guest_id: string;
+    guests: Guest | null;
+  };
+
   const { data: guestLinks } = await supabase
     .from("episode_guests")
     .select("guest_id, guests:guest_id(*)")
-    .eq("episode_id", data.id);
+    .eq("episode_id", episode.id);
 
-  const guests =
-    guestLinks?.map((item) => item.guests).filter(Boolean) ?? [];
+  const linkedGuests = (guestLinks as GuestLink[] | null) ?? [];
+
+  const guests = linkedGuests
+    .map((item) => item.guests)
+    .filter((guest): guest is Guest => Boolean(guest));
 
   return {
-    ...data,
+    ...episode,
     guests,
   };
 }

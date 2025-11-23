@@ -3,7 +3,9 @@ import type { Database, TablesRow } from "@/types/database";
 
 export type Sponsor = TablesRow<Database["public"]["Tables"]["sponsors"]>;
 
-export async function getActiveSponsors(referenceDate = new Date()) {
+export async function getActiveSponsors(
+  referenceDate = new Date()
+): Promise<Sponsor[]> {
   const supabase = createServerSupabaseClient();
   const today = referenceDate.toISOString();
   const { data, error } = await supabase
@@ -15,9 +17,9 @@ export async function getActiveSponsors(referenceDate = new Date()) {
 
   if (error) {
     console.error("Failed to fetch sponsors", error.message);
-    return [];
+    return [] as Sponsor[];
   }
 
-  return data ?? [];
+  return (data as Sponsor[]) ?? [];
 }
 

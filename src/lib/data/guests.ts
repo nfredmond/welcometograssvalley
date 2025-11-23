@@ -32,8 +32,14 @@ export async function getEpisodesForGuest(guestId: string): Promise<Episode[]> {
     return [] as Episode[];
   }
 
-  return (
-    data?.map((record) => record.episodes).filter(Boolean) as Episode[] | undefined
-  ) ?? [];
+  type EpisodeLink = {
+    episodes: Episode | null;
+  };
+
+  const links = (data as EpisodeLink[] | null) ?? [];
+
+  return links
+    .map((record) => record.episodes)
+    .filter((episode): episode is Episode => Boolean(episode));
 }
 
