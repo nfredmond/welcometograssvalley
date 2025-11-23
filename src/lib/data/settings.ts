@@ -4,7 +4,7 @@ import type { Database, TablesRow } from "@/types/database";
 
 export type SiteSettings = TablesRow<Database["public"]["Tables"]["site_settings"]>;
 
-export const getSiteSettings = cache(async () => {
+export const getSiteSettings = cache(async (): Promise<SiteSettings | null> => {
   const supabase = createServerSupabaseClient();
   const { data, error } = await supabase
     .from("site_settings")
@@ -17,6 +17,6 @@ export const getSiteSettings = cache(async () => {
     return null;
   }
 
-  return data;
+  return (data as SiteSettings | null) ?? null;
 });
 
