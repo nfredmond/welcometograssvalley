@@ -83,7 +83,7 @@ export async function getEpisodeBySlug(slug: string): Promise<EpisodeWithGuests 
   };
 }
 
-export async function getAllEpisodes() {
+export async function getAllEpisodes(): Promise<Episode[]> {
   const supabase = createServerSupabaseClient();
   const { data, error } = await supabase
     .from("episodes")
@@ -92,9 +92,9 @@ export async function getAllEpisodes() {
 
   if (error) {
     console.error("Failed to fetch all episodes", error.message);
-    return [];
+    return [] as Episode[];
   }
 
-  return data ?? [];
+  return (data as Episode[]) ?? [];
 }
 
