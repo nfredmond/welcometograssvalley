@@ -14,7 +14,7 @@ export type PaginatedEpisodes = {
 
 export const PAGE_SIZE = 12;
 
-export const getLatestEpisode = cache(async () => {
+export const getLatestEpisode = cache(async (): Promise<Episode | null> => {
   const supabase = createServerSupabaseClient();
   const { data, error } = await supabase
     .from("episodes")
@@ -27,7 +27,7 @@ export const getLatestEpisode = cache(async () => {
     return null;
   }
 
-  return data?.[0] ?? null;
+  return (data?.[0] as Episode | undefined) ?? null;
 });
 
 export async function getPaginatedEpisodes(page = 1): Promise<PaginatedEpisodes> {
