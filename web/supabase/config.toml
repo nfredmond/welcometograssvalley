@@ -1,0 +1,14 @@
+project_id = "welcome-to-grass-valley"
+
+[functions.sync_episodes_from_rss]
+verify_jwt = false
+
+  [functions.sync_episodes_from_rss.crons]
+  schedule = "0 * * * *" # hourly sync
+
+[storage.buckets."guest-photos"]
+public = true
+
+[storage.buckets."episode-artwork"]
+public = true
+
