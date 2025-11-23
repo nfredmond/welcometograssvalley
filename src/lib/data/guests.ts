@@ -3,7 +3,7 @@ import type { Database, TablesRow } from "@/types/database";
 
 export type Guest = TablesRow<Database["public"]["Tables"]["guests"]>;
 
-export async function getGuests() {
+export async function getGuests(): Promise<Guest[]> {
   const supabase = createServerSupabaseClient();
   const { data, error } = await supabase
     .from("guests")
@@ -12,13 +12,15 @@ export async function getGuests() {
 
   if (error) {
     console.error("Failed to fetch guests", error.message);
-    return [];
+    return [] as Guest[];
   }
 
-  return data ?? [];
+  return (data as Guest[]) ?? [];
 }
 
-export async function getEpisodesForGuest(guestId: string) {
+type Episode = TablesRow<Database["public"]["Tables"]["episodes"]>;
+
+export async function getEpisodesForGuest(guestId: string): Promise<Episode[]> {
   const supabase = createServerSupabaseClient();
   const { data, error } = await supabase
     .from("episode_guests")
@@ -27,9 +29,11 @@ export async function getEpisodesForGuest(guestId: string) {
 
   if (error) {
     console.error("Failed to fetch guest episodes", error.message);
-    return [];
+    return [] as Episode[];
   }
 
-  return data?.map((record) => record.episodes).filter(Boolean) ?? [];
+  return (
+    data?.map((record) => record.episodes).filter(Boolean) as Episode[] | undefined
+  ) ?? [];
 }
 
