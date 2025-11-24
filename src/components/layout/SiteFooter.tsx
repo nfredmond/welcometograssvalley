@@ -30,7 +30,7 @@ export function SiteFooter({ socialLinks }: SiteFooterProps) {
             : null}
         </div>
         <p className="text-xs uppercase tracking-[0.4em] text-[#6dac87]">
-          © {new Date().getFullYear()} Nathaniel Redmond & Ryan Doty
+          © {new Date().getFullYear()} Welcome to Grass Valley
         </p>
       </div>
     </footer>
