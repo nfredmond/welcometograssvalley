@@ -82,7 +82,7 @@ export default async function Home() {
             </>
           ) : (
             <p className="text-sm text-[#1f4e3c]">
-              Episodes will appear here after you run the RSS sync function.
+              First episode coming soon!
             </p>
           )}
         </div>
