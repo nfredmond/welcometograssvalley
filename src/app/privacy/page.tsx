@@ -3,14 +3,14 @@ export const revalidate = 86400;
 export default function PrivacyPage() {
   return (
     <article className="panel space-y-6 p-8">
-      <p className="text-xs uppercase tracking-[0.4em] text-[#a27955]">
+      <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
         Policies
       </p>
-      <h1 className="text-4xl text-[#2d241d]">
+      <h1 className="text-4xl text-[#0f2e24]">
         Privacy Policy & Disclaimers
       </h1>
-      <section className="space-y-3 text-sm text-[#4f4137]">
-        <h2 className="text-2xl text-[#2d241d]">Privacy</h2>
+      <section className="space-y-3 text-sm text-[#1f4e3c]">
+        <h2 className="text-2xl text-[#0f2e24]">Privacy</h2>
         <p>
           Welcome to Grass Valley (“we,” “us,” “our”) collects the minimum
           amount of personal information needed to operate the podcast and
@@ -32,8 +32,8 @@ export default function PrivacyPage() {
           </li>
         </ul>
       </section>
-      <section className="space-y-3 text-sm text-[#4f4137]">
-        <h2 className="text-2xl text-[#2d241d]">Content warning</h2>
+      <section className="space-y-3 text-sm text-[#1f4e3c]">
+        <h2 className="text-2xl text-[#0f2e24]">Content warning</h2>
         <p>
           Episodes often address addiction, recovery, mental health challenges,
           violence, and other sensitive topics. Listener discretion is advised.
@@ -44,8 +44,8 @@ export default function PrivacyPage() {
           (530) 265-5811.
         </p>
       </section>
-      <section className="space-y-3 text-sm text-[#4f4137]">
-        <h2 className="text-2xl text-[#2d241d]">Recovery disclaimer</h2>
+      <section className="space-y-3 text-sm text-[#1f4e3c]">
+        <h2 className="text-2xl text-[#0f2e24]">Recovery disclaimer</h2>
         <p>
           Podcast conversations are personal experiences, not medical or legal
           advice. Always consult licensed clinicians for diagnosis, treatment,
@@ -53,13 +53,13 @@ export default function PrivacyPage() {
           does not equal endorsement.
         </p>
       </section>
-      <section className="space-y-3 text-sm text-[#4f4137]">
-        <h2 className="text-2xl text-[#2d241d]">Contact</h2>
+      <section className="space-y-3 text-sm text-[#1f4e3c]">
+        <h2 className="text-2xl text-[#0f2e24]">Contact</h2>
         <p>
           Questions about this policy? Email{" "}
           <a
             href="mailto:privacy@welcometograssvalley.com"
-            className="underline decoration-[#d3b08c]"
+            className="underline decoration-[#acd8c7]"
           >
             privacy@welcometograssvalley.com
           </a>

@@ -20,28 +20,33 @@ export default async function Home() {
     <div className="flex flex-col gap-8">
       <section className="panel flex flex-col gap-8 p-8 lg:flex-row">
         <div className="flex-1 space-y-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#b88658]">
-            Real talk from Manion Canyon Rd.
+          <p className="text-xs uppercase tracking-[0.4em] text-[#6dac87]">
+            Field reports from Grass Valley
           </p>
-          <h1 className="text-4xl leading-tight text-[#2d241d] lg:text-5xl">
+          <h1 className="text-4xl leading-tight text-[#0f2e24] lg:text-5xl">
             {settings?.hero_subtitle ??
-              "Neighbors Nathaniel Redmond & Ryan Doty host hopeful, funny conversations about life in Grass Valley."}
+              "Fast hits on recovery, service, and creativity in the Sierra foothills."}
           </h1>
-          <p className="text-lg text-[#4f4137]">
-            Local news. Recovery and sobriety support. Comedy. Raw interviews
-            with sheriffs, probation officers, nurses, artists, and everyone who
-            keeps the Sierra Nevada beating.
-          </p>
+          <div className="flex flex-wrap gap-2 text-sm font-semibold text-[#1f4e3c]">
+            {["Recovery check-ins", "County voices", "Art + river humor"].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-[#cfe3d3] bg-white/60 px-4 py-2 uppercase tracking-[0.2em]"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
           <div className="flex flex-wrap items-center gap-4">
             <a
               href={latestEpisode ? `/episodes/${latestEpisode.slug}` : "/episodes"}
-              className="rounded-full bg-[#5b3b2e] px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-[#f5e6d4] transition hover:bg-[#3d2a22]"
+              className="rounded-full bg-[#1f4a3a] px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-[#e5f4ec] transition hover:bg-[#184739]"
             >
               Listen Now
             </a>
             <a
               href="#subscribe"
-              className="rounded-full border border-[#d9c6b3] px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-[#5b3b2e]"
+              className="rounded-full border border-[#cfe3d3] px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-[#1f4a3a]"
             >
               Subscribe
             </a>
@@ -50,20 +55,20 @@ export default async function Home() {
             <PlatformButtons />
           </div>
         </div>
-        <div className="flex-1 space-y-4 rounded-[2.5rem] border border-[#e4d3c2] bg-[#fbf7f2]/80 p-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#a27955]">
+        <div className="flex-1 space-y-4 rounded-[2.5rem] border border-[#c9dfcf] bg-[#f2f7f3]/80 p-6">
+          <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
             Latest drop
           </p>
           {latestEpisode ? (
             <>
               <div>
-                <p className="text-sm text-[#5a4d44]">
+                <p className="text-sm text-[#2c6150]">
                   {formatDate(latestEpisode.published_at)}
                 </p>
-                <h2 className="mt-2 text-2xl font-semibold text-[#2d241d]">
+                <h2 className="mt-2 text-2xl font-semibold text-[#0f2e24]">
                   {latestEpisode.title}
                 </h2>
-                <p className="text-sm text-[#4f4137]">
+                <p className="text-sm text-[#1f4e3c]">
                   {latestEpisode.guest_summary ??
                     latestEpisode.description?.slice(0, 160)}
                 </p>
@@ -72,11 +77,11 @@ export default async function Home() {
                 title={latestEpisode.title}
                 audioUrl={latestEpisode.audio_url}
               />
-              <div className="flex flex-wrap gap-2 text-xs text-[#85624a]">
+              <div className="flex flex-wrap gap-2 text-xs text-[#3a7359]">
                 {latestEpisode.tags?.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-[#d9c6b3] px-3 py-1"
+                    className="rounded-full border border-[#cfe3d3] px-3 py-1"
                   >
                     {tag}
                   </span>
@@ -84,7 +89,7 @@ export default async function Home() {
               </div>
             </>
           ) : (
-            <p className="text-sm text-[#4f4137]">
+            <p className="text-sm text-[#1f4e3c]">
               Episodes will appear here after you run the RSS sync function.
             </p>
           )}
@@ -94,25 +99,24 @@ export default async function Home() {
       <section className="panel p-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#a27955]">
-              Manifesto
+            <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
+              Field notes
             </p>
-            <h2 className="text-3xl text-[#2d241d]">Community lifeline</h2>
+            <h2 className="text-3xl text-[#0f2e24]">Keep Grass Valley lifted</h2>
           </div>
-          <p className="text-sm text-[#5a4d44]">
-            {settings?.manifesto ??
-              "We lift people up, talk about what no one else will, and leave listeners hungry for the next episode."}
+          <p className="text-sm text-[#2c6150]">
+            {settings?.manifesto ?? "Short pulses that keep the foothills informed and hopeful."}
           </p>
         </div>
         <div className="mt-6 grid gap-6 md:grid-cols-3">
           {[
-            "Hopeful recovery support & mental health check-ins.",
-            "Local news without the sensationalism—just neighbors showing up.",
-            "Laughs, honesty, and accountability to keep Grass Valley thriving.",
+            "Weekly sobriety resources & check-ins.",
+            "Service updates from sheriffs, nurses, and crews.",
+            "Stories from trailheads, downtown stages, and the Yuba.",
           ].map((line) => (
             <div
               key={line}
-              className="rounded-2xl border border-[#e4d3c2] bg-white/80 p-4 text-sm text-[#4f4137]"
+              className="rounded-2xl border border-[#c9dfcf] bg-white/80 p-4 text-sm text-[#1f4e3c]"
             >
               {line}
             </div>

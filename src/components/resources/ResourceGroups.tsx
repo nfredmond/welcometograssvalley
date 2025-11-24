@@ -16,7 +16,7 @@ function groupResources(resources: Resource[]) {
 export function ResourceGroups({ resources }: ResourceGroupsProps) {
   if (!resources.length) {
     return (
-      <div className="panel p-6 text-sm text-[#5a4d44]">
+      <div className="panel p-6 text-sm text-[#2c6150]">
         Resource links will appear here once you add them in Supabase.
       </div>
     );
@@ -28,7 +28,7 @@ export function ResourceGroups({ resources }: ResourceGroupsProps) {
     <div className="flex flex-col gap-6">
       {Object.entries(grouped).map(([category, links]) => (
         <section key={category} className="panel p-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#b88658]">
+          <p className="text-xs uppercase tracking-[0.4em] text-[#6dac87]">
             {category}
           </p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -38,12 +38,12 @@ export function ResourceGroups({ resources }: ResourceGroupsProps) {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl border border-[#e4d3c2] bg-white/80 p-4 transition hover:border-[#b88658]"
+                className="rounded-2xl border border-[#c9dfcf] bg-white/80 p-4 transition hover:border-[#6dac87]"
               >
-                <p className="text-lg font-semibold text-[#2d241d]">
+                <p className="text-lg font-semibold text-[#0f2e24]">
                   {link.title}
                 </p>
-                <p className="text-sm text-[#4f4137]">{link.description}</p>
+                <p className="text-sm text-[#1f4e3c]">{link.description}</p>
               </a>
             ))}
           </div>

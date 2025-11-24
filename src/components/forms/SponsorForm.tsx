@@ -50,38 +50,38 @@ export function SponsorForm() {
       <input
         name="organization"
         placeholder="Organization"
-        className="rounded-2xl border border-[#d9c6b3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#a97952]"
+        className="rounded-2xl border border-[#cfe3d3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#4f9c78]"
         required
       />
       <input
         name="contact_name"
         placeholder="Point of contact"
-        className="rounded-2xl border border-[#d9c6b3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#a97952]"
+        className="rounded-2xl border border-[#cfe3d3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#4f9c78]"
         required
       />
       <input
         type="email"
         name="email"
         placeholder="Email"
-        className="rounded-2xl border border-[#d9c6b3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#a97952]"
+        className="rounded-2xl border border-[#cfe3d3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#4f9c78]"
         required
       />
       <textarea
         name="message"
         placeholder="Tell us about your mission and how you hope to partner."
-        className="min-h-[150px] rounded-2xl border border-[#d9c6b3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#a97952]"
+        className="min-h-[150px] rounded-2xl border border-[#cfe3d3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#4f9c78]"
         required
       />
       <HoneypotField />
       <button
         type="submit"
-        className="rounded-full bg-[#b88658] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#2d241d] transition hover:bg-[#d49b60]"
+        className="rounded-full bg-[#6dac87] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#0f2e24] transition hover:bg-[#7cb091]"
         disabled={status === "loading"}
       >
         {status === "loading" ? "Sending..." : "Send inquiry"}
       </button>
       {status === "success" && (
-        <p className="text-sm text-[#2f6b3a]">
+        <p className="text-sm text-[#2f6b4e]">
           Thanks! We’ll be in touch with partnership options within a week.
         </p>
       )}

@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     template: "%s | Welcome to Grass Valley",
   },
   description:
-    "Real, respectful, and hopeful conversations from the Sierra Nevada foothills with hosts Nathaniel Redmond & Ryan Doty.",
+    "Signals from Grass Valley: recovery check-ins, civic voices, and art from the Sierra foothills.",
   openGraph: {
     title: "Welcome to Grass Valley Podcast",
     description:
-      "A community lifeline mixing local news, recovery support, and the stories of Grass Valley.",
+      "Field reports from the Yuba River corridor—recovery, service, and culture.",
     url: siteUrl,
     siteName: "Welcome to Grass Valley",
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Welcome to Grass Valley Podcast",
     description:
-      "Neighbors Nathaniel Redmond & Ryan Doty host a community lifeline for Grass Valley, CA.",
+      "Grass Valley stories about recovery, service, and creative life in the Sierra Nevada.",
     images: [`${siteUrl}/og-cover.svg`],
   },
   alternates: {

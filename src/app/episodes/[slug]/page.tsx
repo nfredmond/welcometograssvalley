@@ -81,26 +81,26 @@ export default async function EpisodeDetail({ params }: EpisodeDetailProps) {
   return (
     <article className="flex flex-col gap-8">
       <section className="panel p-8">
-        <p className="text-xs uppercase tracking-[0.4em] text-[#a27955]">
+        <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
           Episode {episode.episode_number ?? "—"}
         </p>
-        <h1 className="mt-2 text-4xl text-[#2d241d]">{episode.title}</h1>
-        <p className="text-sm text-[#5a4d44]">
+        <h1 className="mt-2 text-4xl text-[#0f2e24]">{episode.title}</h1>
+        <p className="text-sm text-[#2c6150]">
           {formatDate(episode.published_at)} ·{" "}
           {formatDuration(episode.duration_seconds)}
         </p>
-        <p className="mt-4 text-lg text-[#4f4137]">{episode.guest_summary}</p>
+        <p className="mt-4 text-lg text-[#1f4e3c]">{episode.guest_summary}</p>
         <div className="mt-6">
           <AudioPlayer title={episode.title} audioUrl={episode.audio_url} />
         </div>
         <div className="mt-6">
           <PlatformButtons />
         </div>
-        <div className="mt-6 flex flex-wrap gap-2 text-xs text-[#85624a]">
+        <div className="mt-6 flex flex-wrap gap-2 text-xs text-[#3a7359]">
           {episode.tags?.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[#d9c6b3] px-3 py-1"
+              className="rounded-full border border-[#cfe3d3] px-3 py-1"
             >
               {tag}
             </span>
@@ -109,8 +109,8 @@ export default async function EpisodeDetail({ params }: EpisodeDetailProps) {
       </section>
 
       <section className="panel space-y-4 p-8">
-        <h2 className="text-2xl text-[#2d241d]">Show notes</h2>
-        <div className="space-y-4 text-[#4f4137]">
+        <h2 className="text-2xl text-[#0f2e24]">Show notes</h2>
+        <div className="space-y-4 text-[#1f4e3c]">
           {episode.description ? (
             <div dangerouslySetInnerHTML={{ __html: episode.description }} />
           ) : (
@@ -122,10 +122,10 @@ export default async function EpisodeDetail({ params }: EpisodeDetailProps) {
       {episode.transcript && (
         <section className="panel p-8">
           <details>
-            <summary className="cursor-pointer text-2xl text-[#2d241d]">
+            <summary className="cursor-pointer text-2xl text-[#0f2e24]">
               Read the transcript
             </summary>
-            <div className="mt-4 max-h-[500px] space-y-4 overflow-y-auto text-sm leading-relaxed text-[#4f4137]">
+            <div className="mt-4 max-h-[500px] space-y-4 overflow-y-auto text-sm leading-relaxed text-[#1f4e3c]">
               {episode.transcript.split("\n").map((line, index) => (
                 <p key={`${line}-${index}`}>{line}</p>
               ))}
@@ -136,18 +136,18 @@ export default async function EpisodeDetail({ params }: EpisodeDetailProps) {
 
       {episode.guests.length ? (
         <section className="panel p-8">
-          <h2 className="text-2xl text-[#2d241d]">Featured guests</h2>
+          <h2 className="text-2xl text-[#0f2e24]">Featured guests</h2>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             {episode.guests.map((guest) => (
               <div
                 key={guest.id}
-                className="rounded-2xl border border-[#e4d3c2] bg-white/80 p-4"
+                className="rounded-2xl border border-[#c9dfcf] bg-white/80 p-4"
               >
-                <p className="text-lg font-semibold text-[#2d241d]">
+                <p className="text-lg font-semibold text-[#0f2e24]">
                   {guest?.name}
                 </p>
-                <p className="text-sm text-[#5a4d44]">{guest?.role}</p>
-                <p className="mt-2 text-sm text-[#4f4137]">{guest?.bio}</p>
+                <p className="text-sm text-[#2c6150]">{guest?.role}</p>
+                <p className="mt-2 text-sm text-[#1f4e3c]">{guest?.bio}</p>
               </div>
             ))}
           </div>

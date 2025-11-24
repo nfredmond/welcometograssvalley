@@ -9,21 +9,21 @@ export function LogoSign({ className, tagline }: LogoSignProps) {
   return (
     <div
       className={cn(
-        "relative mx-auto max-w-md rounded-[2.5rem] border border-[#7a5a45] bg-gradient-to-b from-[#4d3426] via-[#3b2a20] to-[#2b1d16] p-6 text-center text-white shadow-[0_35px_55px_rgba(22,12,6,0.55)]",
+        "relative mx-auto max-w-md rounded-[2.5rem] border border-[#337056] bg-gradient-to-b from-[#1d4739] via-[#12352b] to-[#0a211a] p-6 text-center text-white shadow-[0_35px_55px_rgba(10,33,26,0.55)]",
         className
       )}
     >
-      <div className="mx-auto mb-4 h-1 w-24 rounded-full bg-[#cfa06d]" />
-      <p className="text-sm uppercase tracking-[0.3em] text-[#e0c9b0]">
+      <div className="mx-auto mb-4 h-1 w-24 rounded-full bg-[#8cc8b0]" />
+      <p className="text-sm uppercase tracking-[0.3em] text-[#d8efdf]">
         Welcome to
       </p>
-      <h1 className="mt-3 text-3xl font-semibold tracking-wide text-[#f1e6d7]">
+      <h1 className="mt-3 text-3xl font-semibold tracking-wide text-[#e9f4ec]">
         Grass Valley
       </h1>
-      <p className="mt-4 text-sm text-[#f1d9c1]">
-        {tagline ?? "A podcast for the Sierra Nevada community lifeline."}
+      <p className="mt-4 text-sm text-[#d7efe1]">
+        {tagline ?? "Foothill signals. River-town radio."}
       </p>
-      <div className="absolute -bottom-4 left-1/2 h-8 w-28 -translate-x-1/2 rounded-full bg-[#c08a58] blur-lg opacity-50" />
+      <div className="absolute -bottom-4 left-1/2 h-8 w-28 -translate-x-1/2 rounded-full bg-[#4fa087] blur-lg opacity-60" />
     </div>
   );
 }

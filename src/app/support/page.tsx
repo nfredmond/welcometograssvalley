@@ -15,13 +15,13 @@ export default async function SupportPage() {
   const supportOptions = [
     {
       title: "Join the lifeline club",
-      description: "Monthly giving keeps transcripts and free resources online.",
+      description: "Monthly support keeps transcripts, captions, and helplines live.",
       action: "Support on Patreon",
       url: "https://patreon.com/",
     },
     {
       title: "Send a recovery scholarship",
-      description: "Cover therapy, child care, or sober living for neighbors on the show.",
+      description: "Cover therapy, child care, or sober housing for a featured guest.",
       action: "Email the producers",
       url: "mailto:hello@welcometograssvalley.com",
     },
@@ -36,15 +36,14 @@ export default async function SupportPage() {
   return (
     <div className="flex flex-col gap-8">
       <section className="panel p-8">
-        <p className="text-xs uppercase tracking-[0.4em] text-[#a27955]">
+        <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
           Support & sponsors
         </p>
-        <h1 className="mt-2 text-4xl text-[#2d241d]">
-          Keep the lifeline strong
+        <h1 className="mt-2 text-4xl text-[#0f2e24]">
+          Keep the signal strong
         </h1>
-        <p className="mt-4 text-sm text-[#5a4d44]">
-          Every partnership funds recovery resources, transcripts, and
-          neighborhood reporting across Grass Valley.
+        <p className="mt-4 text-sm text-[#2c6150]">
+          Every partnership funds recovery resources, transcripts, and foothill service coverage.
         </p>
       </section>
 
@@ -55,11 +54,11 @@ export default async function SupportPage() {
             href={option.url}
             className="panel flex flex-col gap-3 p-6 transition hover:-translate-y-1"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-[#a27955]">
+            <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
               {option.title}
             </p>
-            <p className="text-sm text-[#4f4137]">{option.description}</p>
-            <span className="text-sm font-semibold text-[#6f4b33]">
+            <p className="text-sm text-[#1f4e3c]">{option.description}</p>
+            <span className="text-sm font-semibold text-[#1d7157]">
               {option.action} →
             </span>
           </a>
@@ -70,8 +69,8 @@ export default async function SupportPage() {
 
       <section id="sponsor-form" className="grid gap-6 lg:grid-cols-2">
         <div className="panel p-8">
-          <h2 className="text-3xl text-[#2d241d]">Sponsor inquiry</h2>
-          <p className="mt-4 text-sm text-[#5a4d44]">
+          <h2 className="text-3xl text-[#0f2e24]">Sponsor inquiry</h2>
+          <p className="mt-4 text-sm text-[#2c6150]">
             Share your organization, why you&apos;re excited about the podcast,
             and your ideal timeline. We offer tiers for title sponsors, segment
             partners, and community backers.
@@ -81,8 +80,8 @@ export default async function SupportPage() {
       </section>
 
       <section className="panel p-8">
-        <h2 className="text-3xl text-[#2d241d]">Newsletter</h2>
-        <p className="text-sm text-[#5a4d44]">
+        <h2 className="text-3xl text-[#0f2e24]">Newsletter</h2>
+        <p className="text-sm text-[#2c6150]">
           Get episode drops, resource round-ups, and behind-the-scenes dispatches
           in your inbox.
         </p>

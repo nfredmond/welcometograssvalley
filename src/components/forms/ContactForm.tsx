@@ -53,32 +53,32 @@ export function ContactForm() {
         type="text"
         name="name"
         placeholder="Your name"
-        className="rounded-2xl border border-[#d9c6b3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#a97952]"
+        className="rounded-2xl border border-[#cfe3d3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#4f9c78]"
         required
       />
       <input
         type="email"
         name="email"
         placeholder="Email"
-        className="rounded-2xl border border-[#d9c6b3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#a97952]"
+        className="rounded-2xl border border-[#cfe3d3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#4f9c78]"
         required
       />
       <textarea
         name="message"
         placeholder="How can we help lift up the community?"
-        className="min-h-[140px] rounded-2xl border border-[#d9c6b3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#a97952]"
+        className="min-h-[140px] rounded-2xl border border-[#cfe3d3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#4f9c78]"
         required
       />
       <HoneypotField />
       <button
         type="submit"
-        className="rounded-full bg-[#5b3b2e] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#f5e6d4] transition hover:bg-[#3d2a22]"
+        className="rounded-full bg-[#1f4a3a] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#e5f4ec] transition hover:bg-[#184739]"
         disabled={status === "loading"}
       >
         {status === "loading" ? "Sending..." : "Send message"}
       </button>
       {status === "success" && (
-        <p className="text-sm text-[#2f6b3a]">
+        <p className="text-sm text-[#2f6b4e]">
           Thanks for reaching out—we’ll reply within 24 hours.
         </p>
       )}

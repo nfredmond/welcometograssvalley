@@ -20,7 +20,7 @@ export function Pagination({ page, totalPages, basePath = "/episodes" }: Paginat
           "rounded-full border px-4 py-2 uppercase tracking-[0.3em]",
           page === 1
             ? "pointer-events-none border-[#ddd] text-[#aaa]"
-            : "border-[#d9c6b3] text-[#5b3b2e]"
+            : "border-[#cfe3d3] text-[#1f4a3a]"
         )}
       >
         Prev
@@ -32,8 +32,8 @@ export function Pagination({ page, totalPages, basePath = "/episodes" }: Paginat
           className={cn(
             "rounded-full border px-4 py-2 uppercase tracking-[0.3em]",
             page === pageNumber
-              ? "border-[#5b3b2e] bg-[#5b3b2e] text-white"
-              : "border-[#d9c6b3] text-[#5b3b2e]"
+              ? "border-[#1f4a3a] bg-[#1f4a3a] text-white"
+              : "border-[#cfe3d3] text-[#1f4a3a]"
           )}
         >
           {pageNumber}
@@ -45,7 +45,7 @@ export function Pagination({ page, totalPages, basePath = "/episodes" }: Paginat
           "rounded-full border px-4 py-2 uppercase tracking-[0.3em]",
           page === totalPages
             ? "pointer-events-none border-[#ddd] text-[#aaa]"
-            : "border-[#d9c6b3] text-[#5b3b2e]"
+            : "border-[#cfe3d3] text-[#1f4a3a]"
         )}
       >
         Next

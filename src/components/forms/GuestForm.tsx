@@ -49,32 +49,32 @@ export function GuestForm() {
       <input
         name="name"
         placeholder="Your name"
-        className="rounded-2xl border border-[#d9c6b3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#a97952]"
+        className="rounded-2xl border border-[#cfe3d3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#4f9c78]"
         required
       />
       <input
         type="email"
         name="email"
         placeholder="Email"
-        className="rounded-2xl border border-[#d9c6b3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#a97952]"
+        className="rounded-2xl border border-[#cfe3d3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#4f9c78]"
         required
       />
       <textarea
         name="nominee_details"
         placeholder="Who should we talk to? Share their story, role, and contact."
-        className="min-h-[180px] rounded-2xl border border-[#d9c6b3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#a97952]"
+        className="min-h-[180px] rounded-2xl border border-[#cfe3d3] bg-white/80 px-4 py-3 text-sm outline-none focus:border-[#4f9c78]"
         required
       />
       <HoneypotField />
       <button
         type="submit"
-        className="rounded-full bg-[#2d2a26] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#f5e6d4] transition hover:bg-black"
+        className="rounded-full bg-[#14352b] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#e5f4ec] transition hover:bg-black"
         disabled={status === "loading"}
       >
         {status === "loading" ? "Sending..." : "Send submission"}
       </button>
       {status === "success" && (
-        <p className="text-sm text-[#2f6b3a]">
+        <p className="text-sm text-[#2f6b4e]">
           Thank you—our producers will follow up if it’s a fit.
         </p>
       )}

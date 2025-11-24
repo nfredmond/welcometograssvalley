@@ -6,7 +6,7 @@ type AudioPlayerProps = {
 export function AudioPlayer({ title, audioUrl }: AudioPlayerProps) {
   if (!audioUrl) {
     return (
-      <div className="panel p-6 text-sm text-[#5e4a3f]">
+      <div className="panel p-6 text-sm text-[#285e4b]">
         Audio coming soon. We&apos;re lining up the feed from Buzzsprout.
       </div>
     );
@@ -15,13 +15,13 @@ export function AudioPlayer({ title, audioUrl }: AudioPlayerProps) {
   return (
     <div className="panel flex flex-col gap-4 p-6">
       <div>
-        <p className="text-xs uppercase tracking-[0.3em] text-[#b88658]">
+        <p className="text-xs uppercase tracking-[0.3em] text-[#6dac87]">
           Listen
         </p>
-        <p className="text-lg font-semibold text-[#3d2a22]">{title}</p>
+        <p className="text-lg font-semibold text-[#184739]">{title}</p>
       </div>
       <audio
-        className="w-full rounded-2xl border border-[#d8c9b8] bg-[#f8f3ed] p-2"
+        className="w-full rounded-2xl border border-[#cfe3d3] bg-[#eef8f2] p-2"
         controls
         preload="none"
         src={audioUrl}

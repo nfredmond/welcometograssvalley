@@ -27,11 +27,11 @@ export default async function EpisodesPage({ searchParams }: EpisodesPageProps) 
     <div className="flex flex-col gap-10">
       <section className="panel p-8">
         <div className="flex flex-col gap-4">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#a27955]">
+          <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
             Episode archive
           </p>
-          <h1 className="text-4xl text-[#2d241d]">Listen your way</h1>
-          <p className="text-sm text-[#5a4d44]">
+          <h1 className="text-4xl text-[#0f2e24]">Listen your way</h1>
+          <p className="text-sm text-[#2c6150]">
             Search by keyword or filter by tag to find the right encouragement,
             local news, or recovery story when you need it.
           </p>
@@ -43,8 +43,8 @@ export default async function EpisodesPage({ searchParams }: EpisodesPageProps) 
 
       <section className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
-          <h2 className="text-3xl text-[#2d241d]">Chronological feed</h2>
-          <p className="text-sm text-[#5a4d44]">
+          <h2 className="text-3xl text-[#0f2e24]">Chronological feed</h2>
+          <p className="text-sm text-[#2c6150]">
             Page {paginated.page} of {totalPages}. Updates every hour from the
             Buzzsprout RSS sync.
           </p>

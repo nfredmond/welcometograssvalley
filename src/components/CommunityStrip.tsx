@@ -1,15 +1,15 @@
 const highlights = [
   {
-    title: "Sobriety circles",
-    description: "Weekly recovery meetups at the Holbrooke, Thursdays 7p.",
+    title: "Ridge scan",
+    description: "Service news + fire season briefings in under five minutes.",
   },
   {
-    title: "Trail workdays",
-    description: "Volunteers needed on the Empire Mine loop this Saturday.",
+    title: "Yuba flows",
+    description: "River safety, cleanup crews, and water releases each week.",
   },
   {
-    title: "Voices of service",
-    description: "Hear from sheriffs, nurses, and counselors on rotating segments.",
+    title: "Recovery net",
+    description: "Meeting roll calls, sober housing leads, and mentors on deck.",
   },
 ];
 
@@ -17,20 +17,20 @@ export function CommunityStrip() {
   return (
     <div className="panel flex flex-col gap-4 p-6">
       <div className="flex items-center justify-between">
-        <p className="text-xs uppercase tracking-[0.4em] text-[#a27955]">
-          From Around Grass Valley
+        <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
+          Quick sweeps
         </p>
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {highlights.map((item) => (
           <div
             key={item.title}
-            className="rounded-2xl border border-[#e4d3c2] bg-[#fefbf6] p-4"
+            className="rounded-2xl border border-[#c9dfcf] bg-[#f3faf6] p-4"
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#5f4637]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#2e6751]">
               {item.title}
             </p>
-            <p className="mt-2 text-sm text-[#4f4137]">{item.description}</p>
+            <p className="mt-2 text-sm text-[#1f4e3c]">{item.description}</p>
           </div>
         ))}
       </div>

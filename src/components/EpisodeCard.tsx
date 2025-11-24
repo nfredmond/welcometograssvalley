@@ -18,25 +18,25 @@ export function EpisodeCard({ episode, className }: EpisodeCardProps) {
         className
       )}
     >
-      <div className="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-[#a27955]">
+      <div className="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-[#5da37c]">
         <span>Episode {episode.episode_number ?? "—"}</span>
-        <span className="h-px w-8 bg-[#d2b799]" />
+        <span className="h-px w-8 bg-[#bedfcc]" />
         <span>{formatDate(episode.published_at)}</span>
       </div>
-      <h3 className="text-2xl font-semibold text-[#2d241d]">{episode.title}</h3>
-      <p className="text-sm leading-relaxed text-[#5a4d44]">
+      <h3 className="text-2xl font-semibold text-[#0f2e24]">{episode.title}</h3>
+      <p className="text-sm leading-relaxed text-[#2c6150]">
         {episode.guest_summary ??
           episode.description?.slice(0, 160) ??
           "Conversation details coming soon."}
       </p>
-      <div className="flex flex-wrap items-center gap-3 text-xs text-[#85624a]">
-        <span className="rounded-full bg-[#f4eadc] px-3 py-1">
+      <div className="flex flex-wrap items-center gap-3 text-xs text-[#3a7359]">
+        <span className="rounded-full bg-[#e0f1e6] px-3 py-1">
           {formatDuration(episode.duration_seconds)}
         </span>
         {episode.tags?.map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-[#e5d4c2] px-3 py-1"
+            className="rounded-full border border-[#cae3d2] px-3 py-1"
           >
             {tag}
           </span>
@@ -45,7 +45,7 @@ export function EpisodeCard({ episode, className }: EpisodeCardProps) {
       <div className="flex items-center justify-between pt-4">
         <Link
           href={`/episodes/${episode.slug}`}
-          className="text-sm font-semibold text-[#6f4b33] underline decoration-[#d3b08c] underline-offset-4"
+          className="text-sm font-semibold text-[#1d7157] underline decoration-[#acd8c7] underline-offset-4"
         >
           Play episode
         </Link>
@@ -54,7 +54,7 @@ export function EpisodeCard({ episode, className }: EpisodeCardProps) {
             href={episode.audio_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-[#6f4b33]"
+            className="text-sm font-semibold text-[#1d7157]"
           >
             Download
           </a>

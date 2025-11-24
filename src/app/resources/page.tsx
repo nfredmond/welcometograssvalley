@@ -9,11 +9,11 @@ export default async function ResourcesPage() {
   return (
     <div className="flex flex-col gap-8">
       <section className="panel p-8">
-        <p className="text-xs uppercase tracking-[0.4em] text-[#a27955]">
+        <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
           Community lifeline
         </p>
-        <h1 className="mt-2 text-4xl text-[#2d241d]">Resources & support</h1>
-        <p className="mt-4 text-sm text-[#5a4d44]">
+        <h1 className="mt-2 text-4xl text-[#0f2e24]">Resources & support</h1>
+        <p className="mt-4 text-sm text-[#2c6150]">
           These listings are crowd-sourced. They are not medical advice. Always
           consult licensed professionals for treatment.
         </p>
@@ -21,8 +21,8 @@ export default async function ResourcesPage() {
 
       <ResourceGroups resources={resources} />
 
-      <div className="rounded-3xl border border-dashed border-[#d9c6b3] bg-white/80 p-6 text-sm text-[#5a4d44]">
-        <strong className="block text-[#2d241d]">
+      <div className="rounded-3xl border border-dashed border-[#cfe3d3] bg-white/80 p-6 text-sm text-[#2c6150]">
+        <strong className="block text-[#0f2e24]">
           Recovery / mental health disclaimer
         </strong>
         <p className="mt-2">

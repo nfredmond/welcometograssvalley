@@ -1,32 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --color-canvas: #f7f2ea;
-  --color-pine: #2d2a26;
-  --color-cedar: #5b3b2e;
-  --color-bark: #3d2a22;
-  --color-sun: #b88658;
-  --color-lichen: #d9c9b7;
-  --color-mist: #ece6dd;
-  --color-steel: #5e646a;
+  --color-canvas: #e4f1ea;
+  --color-forest: #0f2e24;
+  --color-canopy: #1f4a3a;
+  --color-moss: #2c6b4f;
+  --color-sage: #bcded0;
+  --color-mist: #e7f4ef;
+  --color-river: #2a7f90;
+  --color-earth: #8c6d4d;
   --radius-large: 2.75rem;
   --radius-medium: 1.25rem;
 }
 
 @theme inline {
   --color-background: var(--color-canvas);
-  --color-foreground: var(--color-pine);
-  --color-pine: var(--color-pine);
-  --color-cedar: var(--color-cedar);
-  --color-bark: var(--color-bark);
-  --color-sun: var(--color-sun);
-  --color-lichen: var(--color-lichen);
+  --color-foreground: var(--color-forest);
+  --color-pine: var(--color-forest);
+  --color-cedar: var(--color-canopy);
+  --color-bark: var(--color-moss);
+  --color-sun: var(--color-earth);
+  --color-lichen: var(--color-sage);
   --color-mist: var(--color-mist);
-  --color-steel: var(--color-steel);
+  --color-steel: var(--color-river);
   --font-heading: var(--font-heading);
   --font-sans: var(--font-body);
-  --shadow-card: 0 20px 45px rgba(29, 21, 16, 0.15);
-  --shadow-soft: 0 10px 35px rgba(51, 41, 35, 0.12);
+  --shadow-card: 0 25px 45px rgba(13, 36, 27, 0.15);
+  --shadow-soft: 0 15px 35px rgba(27, 66, 54, 0.15);
   --radius-card: var(--radius-medium);
 }
 
@@ -39,16 +39,52 @@
     font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont,
       "Segoe UI", sans-serif;
     color: var(--color-pine);
-    background: var(--color-canvas);
+    background: linear-gradient(180deg, #0c241c 0%, #0f3528 45%, #0c2d3b 75%, #081915 100%);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
-    background-image: radial-gradient(
-        circle at 1px 1px,
-        rgba(45, 42, 38, 0.08) 1px,
-        transparent 0
+  }
+
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  body::before {
+    background-image: linear-gradient(
+        160deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 35%
       ),
-      linear-gradient(135deg, rgba(91, 59, 46, 0.08), transparent 55%);
-    background-size: 34px 34px, 100%;
+      radial-gradient(
+        circle at 20% 80%,
+        rgba(47, 107, 78, 0.35) 0%,
+        transparent 60%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(12, 30, 24, 0) 0%,
+        rgba(12, 30, 24, 0.8) 65%,
+        rgba(8, 19, 19, 1) 100%
+      );
+    mix-blend-mode: screen;
+  }
+
+  body::after {
+    background-image: radial-gradient(
+        ellipse at 70% 95%,
+        rgba(42, 127, 144, 0.5),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse at 60% 90%,
+        rgba(13, 36, 27, 0.5),
+        transparent 60%
+      );
+    opacity: 0.6;
   }
 
   h1,
@@ -74,10 +110,10 @@
     border-radius: var(--radius-card);
     background: linear-gradient(
       120deg,
-      rgba(255, 255, 255, 0.92),
-      rgba(240, 233, 222, 0.95)
+      rgba(236, 245, 241, 0.96),
+      rgba(205, 224, 207, 0.94)
     );
-    border: 1px solid rgba(91, 59, 46, 0.15);
+    border: 1px solid rgba(44, 97, 80, 0.2);
     box-shadow: var(--shadow-card);
   }
 }

@@ -10,13 +10,12 @@ export default async function GuestsPage() {
   return (
     <div className="flex flex-col gap-8">
       <section className="panel p-8">
-        <p className="text-xs uppercase tracking-[0.4em] text-[#a27955]">
-          Our community
+        <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
+          Voices
         </p>
-        <h1 className="mt-2 text-4xl text-[#2d241d]">Voices of Grass Valley</h1>
-        <p className="mt-4 text-sm text-[#5a4d44]">
-          Sheriffs, probation officers, nurses, musicians, city leaders,
-          historians—we ask everyone to bring their real stories.
+        <h1 className="mt-2 text-4xl text-[#0f2e24]">Grass Valley roster</h1>
+        <p className="mt-4 text-sm text-[#2c6150]">
+          Sheriffs, nurses, medics, historians, growers, artists—short bursts from each.
         </p>
       </section>
 
@@ -24,11 +23,9 @@ export default async function GuestsPage() {
 
       <section className="grid gap-6 lg:grid-cols-2">
         <div className="panel p-6">
-          <h2 className="text-2xl text-[#2d241d]">Be a guest</h2>
-          <p className="mt-4 text-sm text-[#5a4d44]">
-            Suggest yourself or a neighbor who&apos;s making Grass Valley
-            better. We welcome people in recovery, public servants, artists, and
-            anyone with a hopeful story.
+          <h2 className="text-2xl text-[#0f2e24]">Pitch a segment</h2>
+          <p className="mt-4 text-sm text-[#2c6150]">
+            Drop a name doing the work—recovery, service, music, food, river safety.
           </p>
         </div>
         <GuestForm />

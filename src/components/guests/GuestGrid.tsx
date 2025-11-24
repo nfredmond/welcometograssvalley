@@ -8,7 +8,7 @@ type GuestGridProps = {
 export function GuestGrid({ guests }: GuestGridProps) {
   if (!guests.length) {
     return (
-      <div className="panel p-6 text-sm text-[#5a4d44]">
+      <div className="panel p-6 text-sm text-[#2c6150]">
         We’re still building our guest list. Check back soon.
       </div>
     );
@@ -28,21 +28,21 @@ export function GuestGrid({ guests }: GuestGridProps) {
                 loading="lazy"
               />
             ) : (
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#f4eadc] text-xl font-semibold text-[#5b3b2e]">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#e0f1e6] text-xl font-semibold text-[#1f4a3a]">
                 {guest.name.charAt(0)}
               </div>
             )}
             <div>
-              <p className="text-lg font-semibold text-[#2d241d]">
+              <p className="text-lg font-semibold text-[#0f2e24]">
                 {guest.name}
               </p>
-              <p className="text-sm text-[#5a4d44]">{guest.role}</p>
+              <p className="text-sm text-[#2c6150]">{guest.role}</p>
             </div>
           </div>
-          <p className="text-sm text-[#4f4137]">{guest.bio}</p>
+          <p className="text-sm text-[#1f4e3c]">{guest.bio}</p>
           <Link
             href={`/episodes?guest=${guest.slug}`}
-            className="text-sm font-semibold text-[#6f4b33] underline decoration-[#d3b08c] underline-offset-4"
+            className="text-sm font-semibold text-[#1d7157] underline decoration-[#acd8c7] underline-offset-4"
           >
             Hear episodes
           </Link>
