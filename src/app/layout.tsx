@@ -85,7 +85,7 @@ export default async function RootLayout({
       <body
         className={`${headingFont.variable} ${bodyFont.variable} bg-background text-foreground antialiased`}
       >
-        <SiteHeader tagline={settings?.tagline} />
+        <SiteHeader />
         <main className="screen-edge">
           <div className="mx-auto w-full max-w-6xl">{children}</div>
         </main>

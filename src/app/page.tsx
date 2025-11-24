@@ -3,7 +3,6 @@ import { getSiteSettings } from "@/lib/data/settings";
 import { getActiveSponsors } from "@/lib/data/sponsors";
 import { AudioPlayer } from "@/components/AudioPlayer";
 import { PlatformButtons } from "@/components/PlatformButtons";
-import { CommunityStrip } from "@/components/CommunityStrip";
 import { SponsorStrip } from "@/components/SponsorStrip";
 import { formatDate } from "@/lib/formatters";
 
@@ -21,22 +20,15 @@ export default async function Home() {
       <section className="panel flex flex-col gap-8 p-8 lg:flex-row">
         <div className="flex-1 space-y-6">
           <p className="text-xs uppercase tracking-[0.4em] text-[#6dac87]">
-            Field reports from Grass Valley
+            Grass Valley Podcast
           </p>
           <h1 className="text-4xl leading-tight text-[#0f2e24] lg:text-5xl">
             {settings?.hero_subtitle ??
-              "Fast hits on recovery, service, and creativity in the Sierra foothills."}
+              "Short, steady conversations on recovery, service, and local life."}
           </h1>
-          <div className="flex flex-wrap gap-2 text-sm font-semibold text-[#1f4e3c]">
-            {["Recovery check-ins", "County voices", "Art + river humor"].map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-[#cfe3d3] bg-white/60 px-4 py-2 uppercase tracking-[0.2em]"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
+          <p className="text-base text-[#1f4e3c]">
+            Weekly drops featuring recovery mentors, county staff, health teams, and artists.
+          </p>
           <div className="flex flex-wrap items-center gap-4">
             <a
               href={latestEpisode ? `/episodes/${latestEpisode.slug}` : "/episodes"}
@@ -96,35 +88,16 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="panel p-8">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
-              Field notes
-            </p>
-            <h2 className="text-3xl text-[#0f2e24]">Keep Grass Valley lifted</h2>
-          </div>
-          <p className="text-sm text-[#2c6150]">
-            {settings?.manifesto ?? "Short pulses that keep the foothills informed and hopeful."}
-          </p>
-        </div>
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
-          {[
-            "Weekly sobriety resources & check-ins.",
-            "Service updates from sheriffs, nurses, and crews.",
-            "Stories from trailheads, downtown stages, and the Yuba.",
-          ].map((line) => (
-            <div
-              key={line}
-              className="rounded-2xl border border-[#c9dfcf] bg-white/80 p-4 text-sm text-[#1f4e3c]"
-            >
-              {line}
-            </div>
-          ))}
-        </div>
+      <section className="panel p-8 space-y-4">
+        <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
+          Format
+        </p>
+        <ul className="space-y-3 text-sm text-[#1f4e3c]">
+          <li>Recovery updates and meeting leads.</li>
+          <li>County operations, health advisories, and civic notes.</li>
+          <li>Highlights from artists, educators, and youth programs.</li>
+        </ul>
       </section>
-
-      <CommunityStrip />
 
       <SponsorStrip sponsors={sponsors} />
     </div>
