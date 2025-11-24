@@ -88,17 +88,6 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="panel p-8 space-y-4">
-        <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
-          Format
-        </p>
-        <ul className="space-y-3 text-sm text-[#1f4e3c]">
-          <li>Recovery updates and meeting leads.</li>
-          <li>County operations, health advisories, and civic notes.</li>
-          <li>Highlights from artists, educators, and youth programs.</li>
-        </ul>
-      </section>
-
       <SponsorStrip sponsors={sponsors} />
     </div>
   );

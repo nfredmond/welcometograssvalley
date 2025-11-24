@@ -13,10 +13,7 @@ export function SiteFooter({ socialLinks }: SiteFooterProps) {
         <p className="text-xl font-semibold uppercase tracking-[0.4em]">
           Welcome to Grass Valley
         </p>
-        <p className="text-sm text-[#d7efe1]">
-          Monitors buzzing from Banner Mountain to the Yuba River. Tune in, lift
-          up, keep moving.
-        </p>
+        <p className="text-sm text-[#d7efe1]"></p>
         <div className="flex flex-wrap items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#d7efe1]">
           {links.length
             ? links.map(([key, value]) => (
@@ -30,7 +27,7 @@ export function SiteFooter({ socialLinks }: SiteFooterProps) {
                   {key}
                 </a>
               ))
-            : "Add social links in Supabase site_settings > social_links JSON"}
+            : null}
         </div>
         <p className="text-xs uppercase tracking-[0.4em] text-[#6dac87]">
           © {new Date().getFullYear()} Nathaniel Redmond & Ryan Doty
