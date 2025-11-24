@@ -20,7 +20,7 @@ export default async function Home() {
       <section className="panel flex flex-col gap-8 p-8 lg:flex-row">
         <div className="flex-1 space-y-6">
           <p className="text-xs uppercase tracking-[0.4em] text-[#6dac87]">
-            Grass Valley Podcast
+            Welcome to Grass Valley Podcast
           </p>
           <h1 className="text-4xl leading-tight text-[#0f2e24] lg:text-5xl">
             {settings?.hero_subtitle ??
