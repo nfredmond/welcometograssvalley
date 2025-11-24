@@ -24,7 +24,7 @@ export default async function Home() {
           </p>
           <h1 className="text-4xl leading-tight text-[#0f2e24] lg:text-5xl">
             {settings?.hero_subtitle ??
-              "Short, steady conversations on recovery, service, and local life."}
+              "Honest conversations that make Grass Valley smarter, more hopeful, and more connected."}
           </h1>
           <p className="text-base text-[#1f4e3c]">
             Weekly drops featuring recovery mentors, county staff, health teams, and artists.
