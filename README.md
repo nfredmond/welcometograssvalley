@@ -1,3 +1,5 @@
+![Welcome to Grass Valley Podcast](Welcome%20to%20Grass%20Valley%20-%20logo%201.png)
+
 ## Welcome to Grass Valley Podcast
 
 Modern, mobile-first Next.js + Supabase stack for the “Welcome to Grass Valley” podcast. Hosts Nathaniel Redmond & Ryan Doty mix respectful recovery conversations, local news, comedy, and interviews with diverse Sierra Nevada neighbors.
