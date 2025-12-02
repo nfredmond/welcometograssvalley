@@ -47,47 +47,53 @@ async function sendNotificationEmail(data: {
 }
 
 export async function POST(request: Request) {
-  const payload = await request.json().catch(() => null);
-  if (!payload) {
-    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
-  }
-
-  const parseResult = ContactSchema.safeParse(payload);
-
-  if (!parseResult.success) {
-    return NextResponse.json(
-      { error: parseResult.error.flatten() },
-      { status: 422 }
-    );
-  }
-
-  const { trailhead, ...data } = parseResult.data;
-
-  if (trailhead) {
-    return NextResponse.json({ ok: true });
-  }
-
-  let supabase;
   try {
-    supabase = createServiceSupabaseClient();
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
+    const payload = await request.json().catch(() => null);
+    if (!payload) {
+      return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+    }
+
+    const parseResult = ContactSchema.safeParse(payload);
+
+    if (!parseResult.success) {
+      return NextResponse.json(
+        { error: parseResult.error.flatten() },
+        { status: 422 }
+      );
+    }
+
+    const { trailhead, ...data } = parseResult.data;
+
+    if (trailhead) {
+      return NextResponse.json({ ok: true });
+    }
+
+    let supabase;
+    try {
+      supabase = createServiceSupabaseClient();
+    } catch (error) {
+      console.error("Supabase client creation failed:", error);
+      return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
+    }
+    
+    const { error } = await supabase.from("forms_contact").insert({
+      name: data.name,
+      email: data.email,
+      message: data.message,
+    });
+
+    if (error) {
+      console.error("Contact form insert failed:", error.message);
+      return NextResponse.json({ error: "Unable to save" }, { status: 500 });
+    }
+
+    // Send email notification (non-blocking)
+    sendNotificationEmail(data);
+
+    return NextResponse.json({ ok: true }, { status: 201 });
+  } catch (err) {
+    console.error("Unexpected error in contact route:", err);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
-  const { error } = await supabase.from("forms_contact").insert({
-    name: data.name,
-    email: data.email,
-    message: data.message,
-  });
-
-  if (error) {
-    console.error("Contact form insert failed", error.message);
-    return NextResponse.json({ error: "Unable to save" }, { status: 500 });
-  }
-
-  // Send email notification (non-blocking)
-  sendNotificationEmail(data);
-
-  return NextResponse.json({ ok: true }, { status: 201 });
 }
 
