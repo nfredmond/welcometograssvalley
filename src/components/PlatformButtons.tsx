@@ -1,15 +1,11 @@
 const platforms = [
   {
-    name: "Apple Podcasts",
-    url: "https://podcasts.apple.com/",
-  },
-  {
     name: "Spotify",
-    url: "https://open.spotify.com/",
+    url: "https://open.spotify.com/show/7CtQL9ItQHBADw46KEN3uq",
   },
   {
-    name: "YouTube",
-    url: "https://youtube.com/",
+    name: "RSS Feed",
+    url: "https://anchor.fm/s/10c519aac/podcast/rss",
   },
 ];
 
