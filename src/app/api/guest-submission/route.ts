@@ -4,27 +4,25 @@ import { Resend } from "resend";
 import { createServiceSupabaseClient } from "@/lib/supabase/serviceClient";
 
 const GuestSchema = z.object({
-  name: z.string().min(2),
+  name: z.string().min(1),
   email: z.string().email(),
-  nominee_details: z.string().min(20),
+  nominee_details: z.string().min(1),
   trailhead: z.string().optional().nullable(),
 });
-
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
 
 async function sendNotificationEmail(data: {
   name: string;
   email: string;
   nominee_details: string;
 }) {
-  if (!resend) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
     console.warn("Resend not configured, skipping email notification");
     return;
   }
 
   try {
+    const resend = new Resend(apiKey);
     await resend.emails.send({
       from: "Welcome to Grass Valley <onboarding@resend.dev>",
       to: ["nfredmond@gmail.com", "grassvalleypodcast@gmail.com"],
