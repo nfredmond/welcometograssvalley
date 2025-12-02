@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { Resend } from "resend";
 import { createServiceSupabaseClient } from "@/lib/supabase/serviceClient";
 
 const GuestSchema = z.object({
@@ -10,80 +9,43 @@ const GuestSchema = z.object({
   trailhead: z.string().optional().nullable(),
 });
 
-async function sendNotificationEmail(data: {
-  name: string;
-  email: string;
-  nominee_details: string;
-}) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.warn("Resend not configured, skipping email notification");
-    return;
-  }
-
-  try {
-    const resend = new Resend(apiKey);
-    await resend.emails.send({
-      from: "Welcome to Grass Valley <onboarding@resend.dev>",
-      to: ["nfredmond@gmail.com", "grassvalleypodcast@gmail.com"],
-      subject: `New Guest Suggestion from ${data.name}`,
-      html: `
-        <h2>New Guest Suggestion</h2>
-        <p><strong>From:</strong> ${data.name} (${data.email})</p>
-        <hr />
-        <p><strong>Details:</strong></p>
-        <p>${data.nominee_details.replace(/\n/g, "<br />")}</p>
-        <hr />
-        <p style="color: #666; font-size: 12px;">
-          This submission was received via welcometograssvalley.com
-        </p>
-      `,
-    });
-  } catch (error) {
-    console.error("Failed to send notification email:", error);
-  }
-}
-
 export async function POST(request: Request) {
-  const payload = await request.json().catch(() => null);
-  if (!payload) {
-    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
-  }
-
-  const parseResult = GuestSchema.safeParse(payload);
-  if (!parseResult.success) {
-    return NextResponse.json(
-      { error: parseResult.error.flatten() },
-      { status: 422 }
-    );
-  }
-
-  const { trailhead, ...data } = parseResult.data;
-  if (trailhead) {
-    return NextResponse.json({ ok: true });
-  }
-
-  let supabase;
   try {
-    supabase = createServiceSupabaseClient();
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
+    const payload = await request.json().catch(() => null);
+    if (!payload) {
+      return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+    }
+
+    const parseResult = GuestSchema.safeParse(payload);
+    if (!parseResult.success) {
+      return NextResponse.json(
+        { error: parseResult.error.flatten() },
+        { status: 422 }
+      );
+    }
+
+    const { trailhead, ...data } = parseResult.data;
+    if (trailhead) {
+      return NextResponse.json({ ok: true });
+    }
+
+    const supabase = createServiceSupabaseClient();
+    
+    const { error } = await supabase.from("forms_guest_submissions").insert({
+      name: data.name,
+      email: data.email,
+      nominee_details: data.nominee_details,
+    });
+
+    if (error) {
+      console.error("Guest submission insert failed", error.message);
+      return NextResponse.json({ error: "Unable to save" }, { status: 500 });
+    }
+
+    return NextResponse.json({ ok: true }, { status: 201 });
+  } catch (err) {
+    console.error("Unexpected error in guest submission route:", err);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
-  const { error } = await supabase.from("forms_guest_submissions").insert({
-    name: data.name,
-    email: data.email,
-    nominee_details: data.nominee_details,
-  });
-
-  if (error) {
-    console.error("Guest submission insert failed", error.message);
-    return NextResponse.json({ error: "Unable to save" }, { status: 500 });
-  }
-
-  // Send email notification (non-blocking)
-  sendNotificationEmail(data);
-
-  return NextResponse.json({ ok: true }, { status: 201 });
 }
 
