@@ -4,9 +4,9 @@ import { Resend } from "resend";
 import { createServiceSupabaseClient } from "@/lib/supabase/serviceClient";
 
 const ContactSchema = z.object({
-  name: z.string().min(2),
+  name: z.string().min(1),
   email: z.string().email(),
-  message: z.string().min(10),
+  message: z.string().min(1),
   trailhead: z.string().optional().nullable(),
 });
 
