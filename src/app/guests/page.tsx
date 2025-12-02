@@ -15,7 +15,7 @@ export default async function GuestsPage() {
         </p>
         <h1 className="mt-2 text-4xl text-[#0f2e24]">Grass Valley roster</h1>
         <p className="mt-4 text-sm text-[#2c6150]">
-          Sheriffs, nurses, medics, historians, growers, artists—short bursts from each.
+          Sheriffs, nurses, medics, historians, authors, artists—short bursts from each.
         </p>
       </section>
 
