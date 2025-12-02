@@ -1,10 +1,13 @@
 import { getLatestEpisode } from "@/lib/data/episodes";
 import { getSiteSettings } from "@/lib/data/settings";
 import { getActiveSponsors } from "@/lib/data/sponsors";
-import { AudioPlayer } from "@/components/AudioPlayer";
+import { BuzzsproutEmbed } from "@/components/BuzzsproutEmbed";
 import { PlatformButtons } from "@/components/PlatformButtons";
 import { SponsorStrip } from "@/components/SponsorStrip";
 import { formatDate } from "@/lib/formatters";
+
+// Buzzsprout episode ID for the latest episode (Episode 1)
+const LATEST_BUZZSPROUT_ID = "18283371";
 
 export const revalidate = 60;
 
@@ -65,10 +68,7 @@ export default async function Home() {
                     latestEpisode.description?.slice(0, 160)}
                 </p>
               </div>
-              <AudioPlayer
-                title={latestEpisode.title}
-                audioUrl={latestEpisode.audio_url}
-              />
+              <BuzzsproutEmbed episodeId={LATEST_BUZZSPROUT_ID} />
               <div className="flex flex-wrap gap-2 text-xs text-[#3a7359]">
                 {latestEpisode.tags?.map((tag) => (
                   <span
@@ -81,9 +81,15 @@ export default async function Home() {
               </div>
             </>
           ) : (
-            <p className="text-sm text-[#1f4e3c]">
-              First episode coming soon!
-            </p>
+            <div className="space-y-4">
+              <p className="text-sm text-[#1f4e3c]">
+                Our first episode is live!
+              </p>
+              <BuzzsproutEmbed
+                episodeId={LATEST_BUZZSPROUT_ID}
+                title="Episode 1"
+              />
+            </div>
           )}
         </div>
       </section>
