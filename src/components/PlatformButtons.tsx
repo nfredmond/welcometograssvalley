@@ -1,5 +1,9 @@
 const platforms = [
   {
+    name: "Apple Podcasts",
+    url: "https://podcasts.apple.com/us/podcast/welcome-to-grass-valley/id1857889791",
+  },
+  {
     name: "Spotify",
     url: "https://open.spotify.com/show/7CtQL9ItQHBADw46KEN3uq",
   },
