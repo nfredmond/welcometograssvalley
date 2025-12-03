@@ -4,15 +4,8 @@ import { notFound } from "next/navigation";
 import { getEpisodeBySlug } from "@/lib/data/episodes";
 import { formatDate, formatDuration } from "@/lib/formatters";
 import { AudioPlayer } from "@/components/AudioPlayer";
-import { BuzzsproutEmbed } from "@/components/BuzzsproutEmbed";
+import { BuzzsproutAllEpisodes } from "@/components/BuzzsproutAllEpisodes";
 import { PlatformButtons } from "@/components/PlatformButtons";
-
-// Map of known Buzzsprout episode IDs by episode number
-const BUZZSPROUT_IDS: Record<number, string> = {
-  1: "18283371",
-  2: "18284043",
-  3: "18284138",
-};
 
 type EpisodeDetailProps = {
   params: {
@@ -99,12 +92,10 @@ export default async function EpisodeDetail({ params }: EpisodeDetailProps) {
         </p>
         <p className="mt-4 text-lg text-[#1f4e3c]">{episode.guest_summary}</p>
         <div className="mt-6">
-          {episode.episode_number && BUZZSPROUT_IDS[episode.episode_number] ? (
-            <BuzzsproutEmbed
-              episodeId={BUZZSPROUT_IDS[episode.episode_number]}
-            />
-          ) : (
+          {episode.audio_url ? (
             <AudioPlayer title={episode.title} audioUrl={episode.audio_url} />
+          ) : (
+            <BuzzsproutAllEpisodes />
           )}
         </div>
         <div className="mt-6">
@@ -176,4 +167,3 @@ export default async function EpisodeDetail({ params }: EpisodeDetailProps) {
     </article>
   );
 }
-

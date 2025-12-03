@@ -1,13 +1,9 @@
 import { getLatestEpisode } from "@/lib/data/episodes";
 import { getSiteSettings } from "@/lib/data/settings";
 import { getActiveSponsors } from "@/lib/data/sponsors";
-import { BuzzsproutEmbed } from "@/components/BuzzsproutEmbed";
+import { BuzzsproutAllEpisodes } from "@/components/BuzzsproutAllEpisodes";
 import { PlatformButtons } from "@/components/PlatformButtons";
 import { SponsorStrip } from "@/components/SponsorStrip";
-import { formatDate } from "@/lib/formatters";
-
-// Buzzsprout episode ID for the latest episode (Episode 1)
-const LATEST_BUZZSPROUT_ID = "18283371";
 
 export const revalidate = 60;
 
@@ -52,31 +48,12 @@ export default async function Home() {
         </div>
         <div className="flex-1 space-y-4 rounded-[2.5rem] border border-[#c9dfcf] bg-[#f2f7f3]/80 p-6">
           <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
-            Latest drops
+            All Episodes
           </p>
           <p className="text-sm text-[#1f4e3c]">
-            Our first three episodes are live!
+            Stream all episodes directly from our player below.
           </p>
-          <BuzzsproutEmbed
-            episodeId={LATEST_BUZZSPROUT_ID}
-            title="Episode 1"
-          />
-          <div className="flex flex-col gap-2 pt-2">
-            <a
-              href="/episodes"
-              className="flex items-center justify-between rounded-xl border border-[#cfe3d3] bg-white/60 px-4 py-3 text-sm font-medium text-[#1f4a3a] transition hover:bg-[#e3f3ec]"
-            >
-              <span>Episode 2</span>
-              <span className="text-xs text-[#5da37c]">Listen →</span>
-            </a>
-            <a
-              href="/episodes"
-              className="flex items-center justify-between rounded-xl border border-[#cfe3d3] bg-white/60 px-4 py-3 text-sm font-medium text-[#1f4a3a] transition hover:bg-[#e3f3ec]"
-            >
-              <span>Episode 3 — Gary Pate</span>
-              <span className="text-xs text-[#5da37c]">Listen →</span>
-            </a>
-          </div>
+          <BuzzsproutAllEpisodes />
         </div>
       </section>
 
