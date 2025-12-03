@@ -52,45 +52,31 @@ export default async function Home() {
         </div>
         <div className="flex-1 space-y-4 rounded-[2.5rem] border border-[#c9dfcf] bg-[#f2f7f3]/80 p-6">
           <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
-            Latest drop
+            Latest drops
           </p>
-          {latestEpisode ? (
-            <>
-              <div>
-                <p className="text-sm text-[#2c6150]">
-                  {formatDate(latestEpisode.published_at)}
-                </p>
-                <h2 className="mt-2 text-2xl font-semibold text-[#0f2e24]">
-                  {latestEpisode.title}
-                </h2>
-                <p className="text-sm text-[#1f4e3c]">
-                  {latestEpisode.guest_summary ??
-                    latestEpisode.description?.slice(0, 160)}
-                </p>
-              </div>
-              <BuzzsproutEmbed episodeId={LATEST_BUZZSPROUT_ID} />
-              <div className="flex flex-wrap gap-2 text-xs text-[#3a7359]">
-                {latestEpisode.tags?.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-[#cfe3d3] px-3 py-1"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </>
-          ) : (
-            <div className="space-y-4">
-              <p className="text-sm text-[#1f4e3c]">
-                Our first three episodes are live!
-              </p>
-              <BuzzsproutEmbed
-                episodeId={LATEST_BUZZSPROUT_ID}
-                title="Episode 1"
-              />
-            </div>
-          )}
+          <p className="text-sm text-[#1f4e3c]">
+            Our first three episodes are live!
+          </p>
+          <BuzzsproutEmbed
+            episodeId={LATEST_BUZZSPROUT_ID}
+            title="Episode 1"
+          />
+          <div className="flex flex-col gap-2 pt-2">
+            <a
+              href="/episodes"
+              className="flex items-center justify-between rounded-xl border border-[#cfe3d3] bg-white/60 px-4 py-3 text-sm font-medium text-[#1f4a3a] transition hover:bg-[#e3f3ec]"
+            >
+              <span>Episode 2</span>
+              <span className="text-xs text-[#5da37c]">Listen →</span>
+            </a>
+            <a
+              href="/episodes"
+              className="flex items-center justify-between rounded-xl border border-[#cfe3d3] bg-white/60 px-4 py-3 text-sm font-medium text-[#1f4a3a] transition hover:bg-[#e3f3ec]"
+            >
+              <span>Episode 3 — Gary Pate</span>
+              <span className="text-xs text-[#5da37c]">Listen →</span>
+            </a>
+          </div>
         </div>
       </section>
 
