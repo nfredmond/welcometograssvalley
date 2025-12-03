@@ -83,7 +83,7 @@ export default async function Home() {
           ) : (
             <div className="space-y-4">
               <p className="text-sm text-[#1f4e3c]">
-                Our first episode is live!
+                Our first three episodes are live!
               </p>
               <BuzzsproutEmbed
                 episodeId={LATEST_BUZZSPROUT_ID}
