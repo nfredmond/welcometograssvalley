@@ -15,7 +15,7 @@ const guestList = [
   { name: "Ryan Duram", episode: 12, status: "upcoming", note: "Big Daddy Salsa" },
   { name: "Clayton Lahr and Smartsville Pod", episode: 13, status: "upcoming" },
   { name: "Ryan Jenson", episode: 14, status: "upcoming" },
-  { name: "James Brat", episode: 15, status: "upcoming" },
+  { name: "James Bratt", episode: 15, status: "upcoming" },
 ];
 
 export default async function GuestsPage() {
