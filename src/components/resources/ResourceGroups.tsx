@@ -17,7 +17,7 @@ export function ResourceGroups({ resources }: ResourceGroupsProps) {
   if (!resources.length) {
     return (
       <div className="panel p-6 text-sm text-[#2c6150]">
-        Resource links will appear here once you add them in Supabase.
+        Resource links coming soon.
       </div>
     );
   }
