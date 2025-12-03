@@ -10,7 +10,8 @@ export function GuestForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const payload = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -29,7 +30,7 @@ export function GuestForm() {
       });
 
       if (response.ok) {
-        event.currentTarget.reset();
+        form.reset();
         setStatus("success");
       } else {
         setStatus("error");
