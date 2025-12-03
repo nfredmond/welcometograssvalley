@@ -10,7 +10,8 @@ export function SponsorForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const payload = {
       organization: formData.get("organization"),
       contact_name: formData.get("contact_name"),
@@ -30,7 +31,7 @@ export function SponsorForm() {
       });
 
       if (response.ok) {
-        event.currentTarget.reset();
+        form.reset();
         setStatus("success");
       } else {
         setStatus("error");
