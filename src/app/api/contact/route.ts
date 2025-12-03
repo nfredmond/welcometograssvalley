@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { Resend } from "resend";
 import { createServiceSupabaseClient } from "@/lib/supabase/serviceClient";
 
 const ContactSchema = z.object({
@@ -8,6 +9,40 @@ const ContactSchema = z.object({
   message: z.string().min(1),
   trailhead: z.string().optional().nullable(),
 });
+
+async function sendNotificationEmail(data: {
+  name: string;
+  email: string;
+  message: string;
+}) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.warn("Resend not configured, skipping email notification");
+    return;
+  }
+
+  try {
+    const resend = new Resend(apiKey);
+    await resend.emails.send({
+      from: "Welcome to Grass Valley <onboarding@resend.dev>",
+      to: ["nfredmond@gmail.com", "grassvalleypodcast@gmail.com"],
+      subject: `Contact Form: ${data.name}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>From:</strong> ${data.name} (${data.email})</p>
+        <hr />
+        <p><strong>Message:</strong></p>
+        <p>${data.message.replace(/\n/g, "<br />")}</p>
+        <hr />
+        <p style="color: #666; font-size: 12px;">
+          This submission was received via welcometograssvalley.com
+        </p>
+      `,
+    });
+  } catch (error) {
+    console.error("Failed to send notification email:", error);
+  }
+}
 
 export async function POST(request: Request) {
   try {
@@ -43,6 +78,9 @@ export async function POST(request: Request) {
       console.error("Contact form insert failed:", error.message);
       return NextResponse.json({ error: "Unable to save" }, { status: 500 });
     }
+
+    // Send email notification (non-blocking)
+    sendNotificationEmail(data);
 
     return NextResponse.json({ ok: true }, { status: 201 });
   } catch (err) {
