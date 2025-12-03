@@ -16,6 +16,7 @@ const guestList = [
   { name: "Clayton Lahr and Members of the Welcome to Smartsville Podcast", episode: 13, status: "upcoming" },
   { name: "Ryan Jenson", episode: 14, status: "upcoming" },
   { name: "James Bratt", episode: 15, status: "upcoming" },
+  { name: "Brodie Farber", episode: 16, status: "upcoming" },
 ];
 
 export default async function GuestsPage() {
