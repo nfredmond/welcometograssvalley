@@ -3,7 +3,7 @@ import { GuestForm } from "@/components/forms/GuestForm";
 export const revalidate = 300;
 
 const guestList = [
-  { name: "Gary Pate", episode: 3, status: "complete" },
+  { name: "Gary Pate", episode: 3, status: "complete", note: "Released Dec. 1st, 2025" },
   { name: 'Tyler Ullom aka "Ty-Stick"', episode: 4, status: "complete", note: "Released Dec. 2, 2025" },
   { name: "Marc Bowden", episode: 5, status: "upcoming" },
   { name: "James Maple", episode: 6, status: "upcoming" },
