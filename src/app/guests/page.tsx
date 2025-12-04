@@ -13,7 +13,7 @@ const guestList = [
   { name: "Eric and Ian Oliver", episode: 10, status: "upcoming", note: "Golden West Bees", url: "https://www.facebook.com/p/Golden-West-Bees-100087428560804/" },
   { name: "Chelsea Harris", episode: 11, status: "upcoming" },
   { name: "Ashley Gaughan", episode: 12, status: "upcoming" },
-  { name: "Ryan Duram", episode: 13, status: "upcoming", note: "Big Daddy Salsa" },
+  { name: "Ryan Duram", episode: 13, status: "upcoming", note: "Big Daddy Salsa", url: "https://bigdaddyssalsa.com/" },
   { name: "Clayton Lahr and Members of the Welcome to Smartsville Podcast", episode: 14, status: "upcoming" },
   { name: "Ryan Jenson", episode: 15, status: "upcoming" },
   { name: "James Bratt", episode: 16, status: "upcoming" },
