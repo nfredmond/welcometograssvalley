@@ -8,7 +8,7 @@ const defaultSocialLinks = {
   "Apple Podcasts": "https://podcasts.apple.com/us/podcast/welcome-to-grass-valley/id1857889791",
   "Spotify": "https://open.spotify.com/show/7CtQL9ItQHBADw46KEN3uq",
   "YouTube": "https://www.youtube.com/channel/UCGv0XjM2pb58aNWsDOThwVw",
-  "Facebook": "https://www.facebook.com/people/Welcome-to-Grass-Valley-Podcast/61584657145159/",
+  "Facebook": "https://www.facebook.com/61584657145159/",
   "Instagram": "https://www.instagram.com/welcometograssvalley/",
 };
 

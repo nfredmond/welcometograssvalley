@@ -13,7 +13,7 @@ const platforms = [
   },
   {
     name: "Facebook",
-    url: "https://www.facebook.com/people/Welcome-to-Grass-Valley-Podcast/61584657145159/",
+    url: "https://www.facebook.com/61584657145159/",
   },
   {
     name: "Instagram",
