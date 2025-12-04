@@ -5,8 +5,8 @@ export const revalidate = 300;
 const guestList = [
   { name: "Gary Pate", episode: 3, status: "complete", note: "Released Dec. 1st, 2025" },
   { name: 'Tyler Ullom aka "Ty-Stick"', episode: 4, status: "complete", note: "Released Dec. 3rd, 2025" },
-  { name: "Marc Bowden", episode: 5, status: "upcoming" },
-  { name: "James Maple", episode: 6, status: "upcoming" },
+  { name: "James Maple", episode: 5, status: "complete", note: "Released Dec. 3rd, 2025" },
+  { name: "Mark Bowden", episode: 6, status: "complete", note: "Released Dec. 3rd, 2025" },
   { name: "Nick Doty", episode: 7, status: "upcoming" },
   { name: "Neil Daly", episode: 8, status: "upcoming" },
   { name: "Eric and Ian Oliver", episode: 9, status: "upcoming" },
