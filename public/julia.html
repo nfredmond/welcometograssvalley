@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Julia Park Tracey | Welcome to Grass Valley Podcast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --warm-white: #FFFEF9;
+            --ink: #2C2420;
+            --burgundy: #6B3A3A;
+            --burgundy-light: #8B5A5A;
+            --gold: #B8956E;
+            --gold-muted: #D4C4A8;
+            --sage: #7A8B72;
+            --border: #E8E2D9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .podcast-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--burgundy);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            color: var(--ink);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--burgundy);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--warm-white);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '"';
+            position: absolute;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 40rem;
+            color: var(--gold-muted);
+            opacity: 0.15;
+            top: -8rem;
+            left: -4rem;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--burgundy-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--ink);
+            opacity: 0.7;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold-muted);
+            line-height: 1;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--burgundy);
+            margin: 2rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--ink);
+        }
+
+        /* Bio Card */
+        .bio-card {
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .bio-intro {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--ink);
+            border-left: 3px solid var(--gold);
+            padding-left: 1.5rem;
+        }
+
+        /* Achievements List */
+        .achievements {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .achievement {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: var(--warm-white);
+            border-left: 2px solid var(--sage);
+        }
+
+        .achievement-icon {
+            color: var(--sage);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* Book Grid */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .book-card {
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(44, 36, 32, 0.08);
+        }
+
+        .book-year {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .book-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--burgundy);
+            margin-bottom: 0.5rem;
+        }
+
+        .book-desc {
+            font-size: 0.9rem;
+            color: var(--ink);
+            opacity: 0.8;
+        }
+
+        .book-badge {
+            display: inline-block;
+            background: var(--gold-muted);
+            color: var(--ink);
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        /* Featured Book */
+        .featured-book {
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-light) 100%);
+            color: var(--warm-white);
+            padding: 3rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-book::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(184, 149, 110, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .featured-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .featured-book h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--warm-white);
+            margin-bottom: 1rem;
+        }
+
+        .featured-book p {
+            color: var(--warm-white);
+            opacity: 0.9;
+        }
+
+        .featured-details {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+        }
+
+        .featured-details span {
+            opacity: 0.8;
+        }
+
+        /* Pull Quote */
+        .pull-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--burgundy);
+            text-align: center;
+            padding: 2rem 3rem;
+            margin: 2rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .pull-quote cite {
+            display: block;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+            font-style: normal;
+            color: var(--ink);
+            opacity: 0.6;
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Questions */
+        .questions-section {
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+        }
+
+        .question-group {
+            margin-bottom: 2rem;
+        }
+
+        .question-group-title {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .question {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .question:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .question-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            flex-shrink: 0;
+            width: 2rem;
+        }
+
+        .question-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--ink);
+        }
+
+        /* Quick Facts */
+        .quick-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .fact-card {
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+        }
+
+        .fact-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .fact-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink);
+            color: var(--cream);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        footer .podcast-brand {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: var(--cream);
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .section-number {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .featured-book {
+                padding: 2rem;
+            }
+
+            .pull-quote {
+                padding: 1.5rem;
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="podcast-brand">Welcome to Grass Valley</div>
+            <nav>
+                <a href="#biography">Biography</a>
+                <a href="#books">Books</a>
+                <a href="#featured">New Release</a>
+                <a href="#questions">Questions</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-label">Podcast Interview Prep</div>
+        <h1>Julia Park Tracey</h1>
+        <div class="hero-subtitle">Award-Winning Author, Poet Laureate Emeritus & Ancestral Storyteller</div>
+        <div class="hero-meta">
+            <span>📍 Grass Valley, CA</span>
+            <span>📚 9 Books Published</span>
+            <span>✍️ 40-Year Career</span>
+        </div>
+    </section>
+
+    <main>
+        <!-- Biography Section -->
+        <section id="biography">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2>Biography & Life Story</h2>
+            </div>
+
+            <div class="bio-card">
+                <p class="bio-intro">
+                    Julia Park Tracey is a Grass Valley resident, award-winning journalist with a 40-year career, and author of nine books who specializes in resurrecting the stories of her female ancestors. Her newest novel, <em>Whoa, Nelly!</em>, draws on a lifelong obsession with Laura Ingalls Wilder that began when she received the Little House series on her fourth birthday—books she still owns and rereads every other year.
+                </p>
+            </div>
+
+            <h3>Early Life & Education</h3>
+            <p>Julia grew up in <strong>Penngrove, California</strong> (Sonoma County) as one of five siblings. Two childhood discoveries shaped her path: the <strong>Little House on the Prairie</strong> books at age 4, and discovering Patti Smith's poetry as a teenager—learning she could "write about being angry."</p>
+            
+            <p>She won the Press Democrat's High School Journalism Award two years running, then earned a <strong>BA in Journalism from San Francisco State University</strong> and an <strong>MA in English from CSU East Bay</strong> (her thesis became her first novel).</p>
+
+            <h3>Career Achievements</h3>
+            <div class="achievements">
+                <div class="achievement">
+                    <span class="achievement-icon">◆</span>
+                    <div><strong>Founding Editor of The Alameda Sun</strong> (2001)—first Alameda newspaper to cover gay marriage</div>
+                </div>
+                <div class="achievement">
+                    <span class="achievement-icon">◆</span>
+                    <div><strong>Poet Laureate of Alameda, California</strong> (2014-2017)—now Poet Laureate Emeritus</div>
+                </div>
+                <div class="achievement">
+                    <span class="achievement-icon">◆</span>
+                    <div><strong>Executive Editor & Acquisitions Manager at Sibylline Press</strong>—women's publishing for authors over 50</div>
+                </div>
+                <div class="achievement">
+                    <span class="achievement-icon">◆</span>
+                    <div><strong>Editor of five magazines</strong> including Oakland Magazine and Alameda Magazine</div>
+                </div>
+            </div>
+
+            <h3>The Road to Grass Valley</h3>
+            <p>In February 2019, Julia lost her 21-year-old son Austin to suicide. "My life just stopped. I did not write for two years." In <strong>2021</strong>, she and her husband Patrick moved to Grass Valley and bought a "battered Victorian home." Restoring it themselves—hammering nails, laying tile—broke her writer's block and launched her most prolific creative period.</p>
+
+            <p>Today she describes herself as a "bestselling author, poet laureate emeritus, cat lady, chicken wrangler, bee-witch, bird-nerd, word weirdo, and history stan."</p>
+        </section>
+
+        <!-- Books Section -->
+        <section id="books">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2>Complete Bibliography</h2>
+            </div>
+
+            <div class="book-grid">
+                <div class="book-card">
+                    <div class="book-year">2023</div>
+                    <div class="book-title">The Bereaved</div>
+                    <div class="book-desc">Orphan Train historical fiction about her 3rd great-grandmother Martha Lozier</div>
+                    <span class="book-badge">Kirkus 100 Best Indie Books 2023</span>
+                </div>
+                <div class="book-card">
+                    <div class="book-year">2024</div>
+                    <div class="book-title">Silence: A Novel</div>
+                    <div class="book-desc">Puritan historical fiction about her 7th great-grandmother Silence Nichols Greenleaf</div>
+                    <span class="book-badge">Kirkus 100 Best Indie Books 2024</span>
+                </div>
+                <div class="book-card">
+                    <div class="book-year">2012–2013</div>
+                    <div class="book-title">The Doris Diaries (Vol. 1 & 2)</div>
+                    <div class="book-desc">Edited diaries of her 1920s flapper great-aunt</div>
+                    <span class="book-badge">Grand Prize, Great NW Book Festival</span>
+                </div>
+                <div class="book-card">
+                    <div class="book-year">2013</div>
+                    <div class="book-title">Tongues of Angels</div>
+                    <div class="book-desc">Literary fiction about a Catholic priest (10th Anniversary Edition)</div>
+                </div>
+                <div class="book-card">
+                    <div class="book-year">2014–2015</div>
+                    <div class="book-title">Veronika Layne Series</div>
+                    <div class="book-desc">Contemporary mystery series (Hot Off the Press)</div>
+                </div>
+                <div class="book-card">
+                    <div class="book-year">2009</div>
+                    <div class="book-title">Amaryllis: Collected Poems</div>
+                    <div class="book-desc">Poetry collection (2nd edition 2021)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Book Section -->
+        <section id="featured">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2>New Release: Whoa, Nelly!</h2>
+            </div>
+
+            <div class="featured-book">
+                <div class="featured-label">Coming November 14, 2025</div>
+                <h3>Whoa, Nelly! A Love Story (With Footnotes)</h3>
+                <p>Nelly is a 45-year-old librarian whose life has been shaped by her obsession with Laura Ingalls Wilder's Little House books. When she loses her job, she embarks on a train pilgrimage to De Smet, South Dakota, joining a literary tour of fellow fans—and discovers both the complexities of Wilder's legacy and unexpected love.</p>
+                <div class="featured-details">
+                    <span><strong>Publisher:</strong> Sibylline Press</span>
+                    <span><strong>Format:</strong> Trade paperback ($18)</span>
+                    <span><strong>Pages:</strong> 238</span>
+                </div>
+            </div>
+
+            <div class="pull-quote">
+                "A funny, fierce, nostalgic, and deeply tender novel... The narrative is by turns laugh-out-loud funny and heartbreakingly honest."
+                <cite>— Kirkus Reviews (Starred Review)</cite>
+            </div>
+
+            <h3>The Footnote Innovation</h3>
+            <p>The novel uses footnotes as a narrative device—Nelly directly addresses readers about Wilder, history, and her own life. <em>Kirkus</em> notes: "The footnotes could be gimmicky, but they work effectively here to offer clever insights into Wilder and her work—and into Nelly's life as well."</p>
+
+            <h3>Autobiographical Elements</h3>
+            <p>Julia admits Nelly is her "literary doppelganger." She's read the Little House novels "every year for 50 years at least." At age 13, she participated in a <strong>4H Wagon Trek</strong>—dressed as a pioneer girl for four days, riding 50 miles in covered wagons. She wrote this novel on an actual cross-country train during her Doris Diaries book tour.</p>
+        </section>
+
+        <!-- Questions Section -->
+        <section id="questions">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2>Interview Questions</h2>
+            </div>
+
+            <div class="questions-section">
+                <div class="question-group">
+                    <div class="question-group-title">Opening & Personal Connection</div>
+                    <div class="question">
+                        <span class="question-num">1</span>
+                        <span class="question-text">You moved to Grass Valley in 2021 and restored a Victorian home here. What drew you to Gold Country, and how has living here influenced your writing?</span>
+                    </div>
+                    <div class="question">
+                        <span class="question-num">2</span>
+                        <span class="question-text">You've described the manual labor of home restoration—hammering nails, laying tile—as breaking your writer's block after devastating loss. Can you walk us through how that worked?</span>
+                    </div>
+                    <div class="question">
+                        <span class="question-num">3</span>
+                        <span class="question-text">Three California counties claim you—Sonoma, Alameda, and now Nevada. How does each place live in your writing?</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <div class="question-group-title">The Writing Journey</div>
+                    <div class="question">
+                        <span class="question-num">4</span>
+                        <span class="question-text">You've said that for years, you wondered "when you would become a real writer"—even while working as a journalist. What changed that mindset?</span>
+                    </div>
+                    <div class="question">
+                        <span class="question-num">5</span>
+                        <span class="question-text">You describe poetry as "Brussels sprouts—some people love it and most people hate it." As Poet Laureate, how did you work to change that?</span>
+                    </div>
+                    <div class="question">
+                        <span class="question-num">6</span>
+                        <span class="question-text">Your career spans 40 years, from cutting and pasting newspaper layouts before computers to digital publishing today. What's the biggest change you've witnessed?</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <div class="question-group-title">"Whoa, Nelly!" Deep Dive</div>
+                    <div class="question">
+                        <span class="question-num">7</span>
+                        <span class="question-text">You received the Little House books on your fourth birthday and still own that set. After reading them "every year for 50 years," what made you finally write your own response?</span>
+                    </div>
+                    <div class="question">
+                        <span class="question-num">8</span>
+                        <span class="question-text">Nelly is described as your "literary doppelganger." How autobiographical is she, and where does her story diverge from your own?</span>
+                    </div>
+                    <div class="question">
+                        <span class="question-num">9</span>
+                        <span class="question-text">The book uses footnotes as a narrative device. How did that technique develop, and what does it allow you to do that straight narrative wouldn't?</span>
+                    </div>
+                    <div class="question">
+                        <span class="question-num">10</span>
+                        <span class="question-text"><em>Whoa, Nelly!</em> confronts the racism in the Little House books and Rose Wilder Lane's controversial influence. How do you balance childhood affection with adult critical awareness?</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <div class="question-group-title">Ancestors & Women's History</div>
+                    <div class="question">
+                        <span class="question-num">11</span>
+                        <span class="question-text">You call your female ancestors "an-sisters." Can you tell us about Silence Nichols Greenleaf, your 7th great-grandmother who was punished with a year of silence for crying out in church?</span>
+                    </div>
+                    <div class="question">
+                        <span class="question-num">12</span>
+                        <span class="question-text">Thirty-three years ago, you found a mysterious train receipt in a family scrapbook. Can you tell us the story of that discovery and what it unlocked?</span>
+                    </div>
+                    <div class="question">
+                        <span class="question-num">13</span>
+                        <span class="question-text">You've said you were "outraged for six months" when told Martha's story should be fiction rather than nonfiction. What finally brought you around?</span>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <div class="question-group-title">Loss, Resilience & Creative Life</div>
+                    <div class="question">
+                        <span class="question-num">14</span>
+                        <span class="question-text">After two years of not being able to write following Austin's death, you rewrote <em>The Bereaved</em> in first person. How does writing process grief?</span>
+                    </div>
+                    <div class="question">
+                        <span class="question-num">15</span>
+                        <span class="question-text">You identify as a survivor—of sexual assault, cancer, and loss. Yet your books are described as funny, fierce, and tender. How do you write about darkness while keeping warmth alive?</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Facts Section -->
+        <section id="facts">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2>Quick Reference</h2>
+            </div>
+
+            <div class="quick-facts">
+                <div class="fact-card">
+                    <div class="fact-label">Local Connection</div>
+                    <div class="fact-content">Events at The Bookseller in Grass Valley, writes for The Union newspaper and The 530 online magazine, launched <em>The Bereaved</em> at UUCM in 2023.</div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-label">Self-Description</div>
+                    <div class="fact-content">"Cat lady, chicken wrangler, bee-witch, bird-nerd, word weirdo, history stan"—loves green/red/purple colors, hates blue.</div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-label">On Perseverance</div>
+                    <div class="fact-content">"Don't listen to people who say it isn't a real job. Write the words. You'll get better the longer you write. Don't expect overnight success."</div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-label">Literary Influences</div>
+                    <div class="fact-content">Edward Ball's <em>Slaves in the Family</em>, Jean Hegland, Jo Baker, Maggie O'Farrell, Jane Austen, and Patti Smith.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="podcast-brand">Welcome to Grass Valley</div>
+        <p>Interview Prep Document — Julia Park Tracey</p>
+    </footer>
+</body>
+</html>
