@@ -4,7 +4,7 @@ export const revalidate = 300;
 
 const guestList = [
   { name: "Gary Pate", episode: 3, status: "complete", note: "Released Dec. 1st, 2025" },
-  { name: 'Tyler Ullom aka "Ty-Stick"', episode: 4, status: "complete", note: "Released Dec. 3rd, 2025" },
+  { name: 'Tyler Ullom aka "Ty-Stick"', episode: 4, status: "complete", note: "Released Dec. 3rd, 2025", url: "https://www.instagram.com/tylerullom.m4wm/" },
   { name: "James Maple", episode: 5, status: "complete", note: "Released Dec. 3rd, 2025" },
   { name: "Mark Bowden", episode: 6, status: "complete", note: "Released Dec. 3rd, 2025", url: "https://www.instagram.com/3k_drift_/" },
   { name: "Nick Doty", episode: 7, status: "upcoming" },
