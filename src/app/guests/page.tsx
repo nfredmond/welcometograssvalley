@@ -6,7 +6,7 @@ const guestList = [
   { name: "Gary Pate", episode: 3, status: "complete", note: "Released Dec. 1st, 2025" },
   { name: 'Tyler Ullom aka "Ty-Stick"', episode: 4, status: "complete", note: "Released Dec. 3rd, 2025" },
   { name: "James Maple", episode: 5, status: "complete", note: "Released Dec. 3rd, 2025" },
-  { name: "Mark Bowden", episode: 6, status: "complete", note: "Released Dec. 3rd, 2025" },
+  { name: "Mark Bowden", episode: 6, status: "complete", note: "Released Dec. 3rd, 2025", url: "https://www.instagram.com/3k_drift_/" },
   { name: "Nick Doty", episode: 7, status: "upcoming" },
   { name: "Neil Daly", episode: 8, status: "upcoming" },
   { name: "Julia Park Tracey", episode: 9, status: "upcoming", note: "Award winning local author — Releases Tues. Dec. 9th", url: "https://www.juliaparktracey.com/" },
