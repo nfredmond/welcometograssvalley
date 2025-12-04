@@ -12,6 +12,14 @@ const platforms = [
     url: "https://www.youtube.com/channel/UCGv0XjM2pb58aNWsDOThwVw",
   },
   {
+    name: "Facebook",
+    url: "https://www.facebook.com/people/Welcome-to-Grass-Valley-Podcast/61584657145159/",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/welcometograssvalley/",
+  },
+  {
     name: "RSS Feed",
     url: "https://anchor.fm/s/10c519aac/podcast/rss",
   },
