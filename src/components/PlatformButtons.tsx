@@ -8,6 +8,10 @@ const platforms = [
     url: "https://open.spotify.com/show/7CtQL9ItQHBADw46KEN3uq",
   },
   {
+    name: "YouTube",
+    url: "https://www.youtube.com/channel/UCGv0XjM2pb58aNWsDOThwVw",
+  },
+  {
     name: "RSS Feed",
     url: "https://anchor.fm/s/10c519aac/podcast/rss",
   },
