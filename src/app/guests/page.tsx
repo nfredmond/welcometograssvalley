@@ -9,14 +9,15 @@ const guestList = [
   { name: "Mark Bowden", episode: 6, status: "complete", note: "Released Dec. 3rd, 2025" },
   { name: "Nick Doty", episode: 7, status: "upcoming" },
   { name: "Neil Daly", episode: 8, status: "upcoming" },
-  { name: "Eric and Ian Oliver", episode: 9, status: "upcoming" },
-  { name: "Chelsea Harris", episode: 10, status: "upcoming" },
-  { name: "Ashley Gaughan", episode: 11, status: "upcoming" },
-  { name: "Ryan Duram", episode: 12, status: "upcoming", note: "Big Daddy Salsa" },
-  { name: "Clayton Lahr and Members of the Welcome to Smartsville Podcast", episode: 13, status: "upcoming" },
-  { name: "Ryan Jenson", episode: 14, status: "upcoming" },
-  { name: "James Bratt", episode: 15, status: "upcoming" },
-  { name: "Brodie Farber", episode: 16, status: "upcoming" },
+  { name: "Julia Park Tracey", episode: 9, status: "upcoming", note: "Releases Tues. Dec. 9th", url: "https://www.juliaparktracey.com/" },
+  { name: "Eric and Ian Oliver", episode: 10, status: "upcoming" },
+  { name: "Chelsea Harris", episode: 11, status: "upcoming" },
+  { name: "Ashley Gaughan", episode: 12, status: "upcoming" },
+  { name: "Ryan Duram", episode: 13, status: "upcoming", note: "Big Daddy Salsa" },
+  { name: "Clayton Lahr and Members of the Welcome to Smartsville Podcast", episode: 14, status: "upcoming" },
+  { name: "Ryan Jenson", episode: 15, status: "upcoming" },
+  { name: "James Bratt", episode: 16, status: "upcoming" },
+  { name: "Brodie Farber", episode: 17, status: "upcoming" },
 ];
 
 export default async function GuestsPage() {
@@ -46,6 +47,16 @@ export default async function GuestsPage() {
               <span className="font-medium text-[#0f2e24]">{guest.name}</span>
               {guest.note && (
                 <span className="text-xs text-[#5da37c]">— {guest.note}</span>
+              )}
+              {guest.url && (
+                <a
+                  href={guest.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[#2a7f90] hover:underline"
+                >
+                  Website
+                </a>
               )}
               {guest.status === "complete" && (
                 <span className="ml-auto text-[#2f6b4e] text-lg">✓</span>
