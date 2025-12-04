@@ -10,7 +10,7 @@ const guestList = [
   { name: "Nick Doty", episode: 7, status: "upcoming" },
   { name: "Neil Daly", episode: 8, status: "upcoming" },
   { name: "Julia Park Tracey", episode: 9, status: "upcoming", note: "Award winning local author — Releases Tues. Dec. 9th", url: "https://www.juliaparktracey.com/" },
-  { name: "Eric and Ian Oliver", episode: 10, status: "upcoming", note: "Golden West Bees" },
+  { name: "Eric and Ian Oliver", episode: 10, status: "upcoming", note: "Golden West Bees", url: "https://www.facebook.com/p/Golden-West-Bees-100087428560804/" },
   { name: "Chelsea Harris", episode: 11, status: "upcoming" },
   { name: "Ashley Gaughan", episode: 12, status: "upcoming" },
   { name: "Ryan Duram", episode: 13, status: "upcoming", note: "Big Daddy Salsa" },
