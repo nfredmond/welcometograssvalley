@@ -4,17 +4,30 @@ export const revalidate = 300;
 
 const guestList = [
   { name: "Gary Pate", episode: 3, status: "complete", note: "Released Dec. 1st, 2025" },
-  { name: 'Tyler Ullom aka "Ty-Stick"', episode: 4, status: "complete", note: "Released Dec. 3rd, 2025", url: "https://www.instagram.com/tylerullom.m4wm/" },
+  { name: 'Tyler Ullom aka "Ty-Stick"', episode: 4, status: "complete", note: "Released Dec. 3rd, 2025", links: [
+    { label: "Instagram", url: "https://www.instagram.com/tylerullom.m4wm/" },
+    { label: "YouTube Music", url: "https://music.youtube.com/playlist?list=OLAK5uy_k4SfLhB1upNsFiQIErcIiHdZZZ6YptQHg" },
+  ]},
   { name: "James Maple", episode: 5, status: "complete", note: "Released Dec. 3rd, 2025" },
-  { name: "Mark Bowden", episode: 6, status: "complete", note: "Released Dec. 3rd, 2025", url: "https://www.instagram.com/3k_drift_/" },
+  { name: "Mark Bowden", episode: 6, status: "complete", note: "Released Dec. 3rd, 2025", links: [
+    { label: "Instagram", url: "https://www.instagram.com/3k_drift_/" },
+  ]},
   { name: "Nick Doty", episode: 7, status: "upcoming" },
   { name: "Neil Daly", episode: 8, status: "upcoming" },
-  { name: "Julia Park Tracey", episode: 9, status: "upcoming", note: "Award winning local author — Releases Tues. Dec. 9th", url: "https://www.juliaparktracey.com/" },
-  { name: "Eric and Ian Oliver", episode: 10, status: "upcoming", note: "Golden West Bees", url: "https://www.facebook.com/p/Golden-West-Bees-100087428560804/" },
+  { name: "Julia Park Tracey", episode: 9, status: "upcoming", note: "Award winning local author — Releases Tues. Dec. 9th", links: [
+    { label: "Website", url: "https://www.juliaparktracey.com/" },
+  ]},
+  { name: "Eric and Ian Oliver", episode: 10, status: "upcoming", note: "Golden West Bees", links: [
+    { label: "Facebook", url: "https://www.facebook.com/p/Golden-West-Bees-100087428560804/" },
+  ]},
   { name: "Chelsea Harris", episode: 11, status: "upcoming" },
   { name: "Ashley Gaughan", episode: 12, status: "upcoming" },
-  { name: "Ryan Duram", episode: 13, status: "upcoming", note: "Big Daddy Salsa", url: "https://bigdaddyssalsa.com/" },
-  { name: "Clayton Lahr and Members of the Welcome to Smartsville Podcast", episode: 14, status: "upcoming", url: "https://smartsville.podbean.com/" },
+  { name: "Ryan Duram", episode: 13, status: "upcoming", note: "Big Daddy Salsa", links: [
+    { label: "Website", url: "https://bigdaddyssalsa.com/" },
+  ]},
+  { name: "Clayton Lahr and Members of the Welcome to Smartsville Podcast", episode: 14, status: "upcoming", links: [
+    { label: "Podcast", url: "https://smartsville.podbean.com/" },
+  ]},
   { name: "Ryan Jenson", episode: 15, status: "upcoming" },
   { name: "James Bratt", episode: 16, status: "upcoming" },
   { name: "Brodie Farber", episode: 17, status: "upcoming" },
@@ -48,16 +61,17 @@ export default async function GuestsPage() {
               {guest.note && (
                 <span className="text-xs text-[#5da37c]">— {guest.note}</span>
               )}
-              {guest.url && (
+              {guest.links && guest.links.map((link, idx) => (
                 <a
-                  href={guest.url}
+                  key={idx}
+                  href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-[#2a7f90] hover:underline"
                 >
-                  Website
+                  {link.label}
                 </a>
-              )}
+              ))}
               {guest.status === "complete" && (
                 <span className="ml-auto text-[#2f6b4e] text-lg">✓</span>
               )}
