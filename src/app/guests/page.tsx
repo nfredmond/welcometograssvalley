@@ -14,7 +14,7 @@ const guestList = [
   { name: "Chelsea Harris", episode: 11, status: "upcoming" },
   { name: "Ashley Gaughan", episode: 12, status: "upcoming" },
   { name: "Ryan Duram", episode: 13, status: "upcoming", note: "Big Daddy Salsa", url: "https://bigdaddyssalsa.com/" },
-  { name: "Clayton Lahr and Members of the Welcome to Smartsville Podcast", episode: 14, status: "upcoming" },
+  { name: "Clayton Lahr and Members of the Welcome to Smartsville Podcast", episode: 14, status: "upcoming", url: "https://smartsville.podbean.com/" },
   { name: "Ryan Jenson", episode: 15, status: "upcoming" },
   { name: "James Bratt", episode: 16, status: "upcoming" },
   { name: "Brodie Farber", episode: 17, status: "upcoming" },
