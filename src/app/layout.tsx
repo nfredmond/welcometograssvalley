@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   },
   description:
     "Signals from Grass Valley: recovery check-ins, civic voices, and art from the Sierra foothills.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "Welcome to Grass Valley Podcast",
     description:
