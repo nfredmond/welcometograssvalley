@@ -8,6 +8,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
+        disallow: ["/rip"],
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
