@@ -4,6 +4,7 @@ import { getActiveSponsors } from "@/lib/data/sponsors";
 import { BuzzsproutAllEpisodes } from "@/components/BuzzsproutAllEpisodes";
 import { PlatformButtons } from "@/components/PlatformButtons";
 import { SponsorStrip } from "@/components/SponsorStrip";
+import { SupportButton } from "@/components/SupportButton";
 
 export const revalidate = 60;
 
@@ -41,6 +42,9 @@ export default async function Home() {
             >
               Subscribe
             </a>
+            <SupportButton variant="secondary" className="px-8">
+              Support Us
+            </SupportButton>
           </div>
           <div id="subscribe">
             <PlatformButtons />

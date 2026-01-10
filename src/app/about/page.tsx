@@ -1,4 +1,5 @@
 import { getSiteSettings } from "@/lib/data/settings";
+import { SupportButton } from "@/components/SupportButton";
 
 export const revalidate = 300;
 
@@ -80,6 +81,18 @@ export default async function AboutPage() {
               {value}
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="panel p-8 text-center">
+        <h2 className="text-3xl text-[#0f2e24]">Help keep the signal strong</h2>
+        <p className="mt-4 text-sm text-[#2c6150]">
+          Your support funds recovery resources, transcripts, and foothill service coverage.
+        </p>
+        <div className="mt-6">
+          <SupportButton variant="primary" className="px-8">
+            Support the Show
+          </SupportButton>
         </div>
       </section>
     </div>

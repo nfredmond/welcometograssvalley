@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { LogoSign } from "@/components/LogoSign";
 
+const SUPPORT_URL = "https://www.buzzsprout.com/2559461/support";
+
 const links = [
   { href: "/", label: "Home" },
   { href: "/episodes", label: "Episodes" },
   { href: "/guests", label: "Guests" },
   { href: "/resources", label: "Resources" },
-  { href: "/support", label: "Support" },
+  { href: "/support", label: "Sponsors" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -25,6 +27,14 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <a
+            href={SUPPORT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-[#1f4a3a] px-4 py-1.5 text-[#e5f4ec] transition hover:bg-[#184739]"
+          >
+            Donate
+          </a>
         </nav>
       </div>
     </header>

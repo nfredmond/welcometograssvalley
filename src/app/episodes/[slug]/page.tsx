@@ -6,6 +6,7 @@ import { formatDate, formatDuration } from "@/lib/formatters";
 import { AudioPlayer } from "@/components/AudioPlayer";
 import { BuzzsproutAllEpisodes } from "@/components/BuzzsproutAllEpisodes";
 import { PlatformButtons } from "@/components/PlatformButtons";
+import { SupportButton } from "@/components/SupportButton";
 
 type EpisodeDetailProps = {
   params: {
@@ -98,8 +99,16 @@ export default async function EpisodeDetail({ params }: EpisodeDetailProps) {
             <BuzzsproutAllEpisodes />
           )}
         </div>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap items-center gap-4">
           <PlatformButtons />
+        </div>
+        <div className="mt-6 flex items-center gap-4 rounded-2xl border border-[#c9dfcf] bg-[#f2f7f3]/80 p-4">
+          <p className="text-sm text-[#1f4e3c]">
+            Enjoying the show? Help us keep local stories on the air.
+          </p>
+          <SupportButton variant="primary" className="px-5 py-2 text-xs whitespace-nowrap">
+            Support Us
+          </SupportButton>
         </div>
         <div className="mt-6 flex flex-wrap gap-2 text-xs text-[#3a7359]">
           {episode.tags?.map((tag) => (

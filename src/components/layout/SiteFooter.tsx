@@ -4,6 +4,8 @@ type SiteFooterProps = {
   socialLinks?: SocialLinks;
 };
 
+const SUPPORT_URL = "https://www.buzzsprout.com/2559461/support";
+
 const defaultSocialLinks = {
   "Apple Podcasts": "https://podcasts.apple.com/us/podcast/welcome-to-grass-valley/id1857889791",
   "Spotify": "https://open.spotify.com/show/7CtQL9ItQHBADw46KEN3uq",
@@ -22,7 +24,17 @@ export function SiteFooter({ socialLinks }: SiteFooterProps) {
         <p className="text-xl font-semibold uppercase tracking-[0.4em]">
           Welcome to Grass Valley
         </p>
-        <p className="text-sm text-[#d7efe1]"></p>
+        <p className="text-sm text-[#d7efe1]">
+          Help keep local stories on the air.
+        </p>
+        <a
+          href={SUPPORT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex w-fit rounded-full bg-[#6dac87] px-6 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-[#0f2e24] transition hover:bg-[#5a9a74]"
+        >
+          Support the Show
+        </a>
         <div className="flex flex-wrap items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#d7efe1]">
           {links.map(([key, value]) => (
             <a

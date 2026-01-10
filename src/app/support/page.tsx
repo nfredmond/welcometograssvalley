@@ -14,22 +14,25 @@ export default async function SupportPage() {
 
   const supportOptions = [
     {
-      title: "Join the lifeline club",
+      title: "Support the show",
       description: "Monthly support keeps transcripts, captions, and helplines live.",
-      action: "Support on Patreon",
-      url: "https://patreon.com/",
+      action: "Donate on Buzzsprout",
+      url: "https://www.buzzsprout.com/2559461/support",
+      external: true,
     },
     {
       title: "Send a recovery scholarship",
       description: "Cover therapy, child care, or sober housing for a featured guest.",
       action: "Email the producers",
       url: "mailto:hello@welcometograssvalley.com",
+      external: true,
     },
     {
       title: "Sponsor a season",
       description: "Align your local business with hopeful storytelling. Tiered placements available.",
       action: "Use the inquiry form",
       url: "#sponsor-form",
+      external: false,
     },
   ];
 
@@ -52,6 +55,8 @@ export default async function SupportPage() {
           <a
             key={option.title}
             href={option.url}
+            target={option.external ? "_blank" : undefined}
+            rel={option.external ? "noopener noreferrer" : undefined}
             className="panel flex flex-col gap-3 p-6 transition hover:-translate-y-1"
           >
             <p className="text-xs uppercase tracking-[0.4em] text-[#5da37c]">
